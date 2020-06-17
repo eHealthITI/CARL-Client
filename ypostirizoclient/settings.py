@@ -1,4 +1,5 @@
 import os
+from .config import cnf
 # Basic Configuration
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'g2)#&+&eu(b_^q#!llw1^ccmtl7)(7nbvn6@c3@7d1sn#-=j0b'
@@ -63,4 +64,10 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 STATIC_URL = '/static/'
-DEBUG = True
+# Project Specific params.
+# Change inside .env file 
+SUBJECT_ID = cnf.SUBJECT_ID
+CLOUD_TOKEN = cnf.CLOUD_TOKEN
+CLOUD_URL = cnf.CLOUD_URL
+CLOUD_USER = cnf.CLOUD_USER
+DEBUG = cnf.DEBUG
