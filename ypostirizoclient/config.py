@@ -15,7 +15,7 @@ class GlobalConfig(BaseSettings):
     CLOUD_URL: Optional[str] = Field(None, env='CLOUD_URL')
     CLOUD_TOKEN: Optional[str] = Field(None, env='CLOUD_TOKEN')
     SUBJECT_ID: Optional[int] = Field(None, env='SUBJECT_ID')
-    USER_ID: Optional[str] = Field(None, env='CLOUD_USER')
+    CLOUD_USER: Optional[str] = Field(None, env='CLOUD_USER')
     DEBUG: Optional[bool] = Field(False, env='DEBUG')
 
     class Config:
