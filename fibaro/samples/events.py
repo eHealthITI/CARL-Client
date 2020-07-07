@@ -2,6 +2,8 @@ class SampleEvents:
 
     def __init__(self):
         self.valid_event = {
+            "user": 1,
+            "event_type": "Event name",
             "id": "8126",
             "type": "DEVICE_EVENT",
             "timestamp": 1404723546,
