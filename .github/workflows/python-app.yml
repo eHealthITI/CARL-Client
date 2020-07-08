@@ -16,19 +16,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v2
+    - name: Install
+      uses: abatilo/actions-poetry@v1.5.0
       with:
-        python-version: 3.8
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install poetry pytest pylama
-        poetry install
-    - name: Lint with pylama
-      run: |
-        # Linting the code base
-        pylama
-    - name: Test with pytest
-      run: |
-        pytest
+        python_version: 3.8.0
+        poetry_version: 1.0
+        args: install
+    - name: Lint
+      uses: abatilo/actions-poetry@v1.5.0
+      with:
+        pyhon_version: 3.8.0
+        poetry_version: 1.0
+        args: run python -m pylama
+    - name: Run pytest
+      uses: abatilo/actions-poetry@v1.5.0
+      with:
+        python_version: 3.8.0
+        poetry_version: 1.0
+        args: run python -m pytest --cov=src --cov-branch --cov-fail-under=100 tests/
