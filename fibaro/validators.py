@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from pydantic.types import List, OptionalInt, Optional
 
+from typing import Union
 from ypostirizoclient.settings import CLOUD_USER as user
 
 
@@ -27,49 +28,63 @@ class EventBase(BaseModel):
 
 
 class DeviceProperties(BaseModel):
-    pollingTimeSec: int
-    wakeUpTime: int
-    zwaveCompany: str
-    zwaveInfo: str
-    zwaveVersion: str
+    UIMesageSendTime: OptionalInt
+    autoconfig: OptionalInt
     alarmLevel: OptionalInt
     alarmType: OptionalInt
-    batteryLevel: int
-    batteryLowNotification: bool
-    categories: List[str]
+    batteryLevel: OptionalInt
+    batteryLowNotification: Optional[bool]
+    categories: Optional[List[str]]
     configured: bool
+    date: Optional[str]
     dead: bool
-    deadReason: str
-    defInterval: int
+    deadReason: Optional[str]
+    defInterval: OptionalInt
     deviceControlType: int
     deviceIcon: int
+    disabled: OptionalInt
     emailNotificationID: int
     emailNotificationType: int
+    endPoint: Optional[int]
     endPointId: int
     firmwareUpdate: Optional[dict]
     lastBreached: OptionalInt
+    liliOffCommand: Optional[str]
+    liliOnCommand: Optional[str]
     log: str
     logTemp: str
     manufacturer: str
     markAsDead: bool
-    maxInterval: int
-    minInterval: int
+    maxInterval: OptionalInt
+    minInterval: OptionalInt
     model: str
     nodeId: int
+    parameters: Optional[list]
     parametersTemplate: int
-    pendingActions: bool
+    pendingActions: Optional[bool]
+    pollingDeadDevice: Optional[bool]
+    pollingTime: OptionalInt
+    pollingNextTime: OptionalInt
+    pollingTimeSec: int
     productInfo: str
     pushNotificationID: int
+    pushNotificationType: OptionalInt
+    remoteGatewayId: OptionalInt
     saveLogs: bool
     serialNumber: str
     smsNotificationID: int
     smsNotificationType: int
-    stepInterval: int
+    status: Optional[str]
+    stepInterval: OptionalInt
     tamper: Optional[bool]
     updateVersion: Optional[str]
     useTemplate: bool
     userDescription: str
-    value: Optional[int]
+    value: Union[Optional[int], Optional[float], Optional[dict]]
+    wakeUpTime: OptionalInt
+    zwaveCompany: str
+    zwaveInfo: str
+    zwaveVersion: str
 
 
 class Device(BaseModel):

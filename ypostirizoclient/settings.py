@@ -73,3 +73,5 @@ CLOUD_TOKEN = cnf.CLOUD_TOKEN
 CLOUD_URL = cnf.CLOUD_URL
 CLOUD_USER = cnf.CLOUD_USER
 DEBUG = cnf.DEBUG
+IGNORED_DEVICES = ["HC_user", "com.fibaro.yrWeather",
+                   "com.fibaro.niceEngine", "com.fibaro.zwaveDevice"]

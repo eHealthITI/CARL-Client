@@ -2,12 +2,14 @@ from django.test import TestCase
 
 from fibaro.samples.devices import SampleDevices
 from fibaro.validators import Device
+from ypostirizoclient.settings import IGNORED_DEVICES as ignored
 
 
 class FibaroDevicesTestCase(TestCase):
 
     def setUp(self):
         self.samples = SampleDevices()
+        self.ignored_devices = ignored
 
     def test_door_sensor(self):
         device = Device(**self.samples.door_sensor)
@@ -32,8 +34,9 @@ class FibaroDevicesTestCase(TestCase):
     def test_temp_sensor(self):
         device = Device(**self.samples.temp_sensor)
         self.assertEqual(device.__class__, Device)
-    
+
     def test_devices_bulk(self):
         for dev in self.samples.valid_devices:
-            device = Device(**dev)
-            self.assertEqual(device.__class__, Device)
+            if dev['type'] not in self.ignored_devices:
+                device = Device(**dev)
+                self.assertEqual(device.__class__, Device)
