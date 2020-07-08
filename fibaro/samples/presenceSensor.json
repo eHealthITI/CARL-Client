@@ -1,0 +1,18 @@
+[
+    {
+        "id": 12519,
+        "type": "DEVICE_EVENT",
+        "timestamp": 1594114692,
+        "deviceID": 21,
+        "deviceType": "com.fibaro.FGMS001v2",
+        "event": {
+          "type": "DevicePropertyUpdatedEvent",
+          "data": {
+            "id": 21,
+            "property": "value",
+            "oldValue": true,
+            "newValue": false
+          }
+        }
+      }
+]

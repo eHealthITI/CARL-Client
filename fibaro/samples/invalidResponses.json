@@ -1,0 +1,34 @@
+[
+    {
+        "id": 12466,
+        "type": "DEVICE_EVENT",
+        "timestamp": "asdfs",
+        "deviceID": 21,
+        "deviceType": "com.fibaro.FGMS001v2",
+        "event": {
+          "type": "DevicePropertyUpdatedEvent",
+          "data": {
+            "id": 21,
+            "property": "value",
+            "oldValue": true,
+            "newValue": false
+          }
+        }
+      },
+      {
+        "id": 12466,
+        "type": "DEVICE_EVENT",
+        "timestamp": "asdfs",
+        "deviceID": 21,
+        "deviceType": "com.fibaro.FGMS001v2",
+        "event": {
+          "type": "DevicePropertyUpdatedEvent",
+          "data": {
+            "id": "sadf",
+            "property": "value",
+            "oldValue": "dsa",
+            "newValue": false
+          }
+        }
+      }   
+]

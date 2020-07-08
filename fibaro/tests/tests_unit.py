@@ -1,6 +1,6 @@
 from django.test import TestCase
-from fibaro.validators import Event
 from fibaro.ypostirizo import Ypostirizo
+from fibaro.validators import EventBase
 from fibaro.samples.events import SampleEvents
 from django.conf import settings
 import pydantic
@@ -13,12 +13,13 @@ class FibaroTestCase(TestCase):
         self.samples = SampleEvents()
 
     def test_valid_event(self):
-        event = Event(**self.samples.valid_event)
-        self.assertEqual(event.__class__, Event)
+        for ev in self.samples.valid_events:
+            event = EventBase(**ev)
+            self.assertEqual(event.__class__, EventBase)
 
     def test_invalid_event(self):
-        self.assertRaises(pydantic.ValidationError, Event,
-                          **self.samples.invalid_event)
+        for ev in self.samples.invalid_events:
+            self.assertRaises(pydantic.ValidationError, EventBase, **ev)
 
 
 class FibaroAdapter(TestCase):

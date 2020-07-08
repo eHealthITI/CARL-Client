@@ -1,26 +1,20 @@
+import json
+
+
 class SampleEvents:
 
     def __init__(self):
-        self.valid_event = {
-            "user": 1,
-            "event_type": "Event name",
-            "id": "8126",
-            "type": "DEVICE_EVENT",
-            "timestamp": 1404723546,
-            "deviceID": 1701,
-            "deviceType": "com.fibaro.temperatureSensor",
-            "propertyName": "value",
-            "oldValue": 28.6,
-            "newValue": 26.7
-        }
+        with open("fibaro/samples/responses.json") as resp:
+            self.valid_events = json.load(resp)
 
-        self.invalid_event = {
-            "id": "8126",
-            "type": None,
-            "timestamp": "tasdf9845",
-            "deviceID": 1701,
-            "deviceType": "com.fibaro.temperatureSensor",
-            "propertyName": "value",
-            "oldValue": 28.6,
-            "newValue": 26.7
-        }
+        with open("fibaro/samples/invalidResponses.json") as invs:
+            self.invalid_events = json.load(invs)
+
+        with open('fibaro/samples/lightSensor.json') as light:
+            self.light_event = json.load(light)[0]
+
+        with open('fibaro/samples/presenceSensor.json') as pres:
+            self.presence_event = json.load(pres)[0]
+
+        with open('fibaro/samples/tempSensor.json') as temp:
+            self.temp_event = json.load(temp)[0]
