@@ -19,18 +19,18 @@ jobs:
     - name: Install
       uses: abatilo/actions-poetry@v1.5.0
       with:
-        python_version: 3.8.0
+        python_version: 3.8.3
         poetry_version: 1.0
         args: install
     - name: Lint
       uses: abatilo/actions-poetry@v1.5.0
       with:
-        pyhon_version: 3.8.0
+        pyhon_version: 3.8.3
         poetry_version: 1.0
         args: run python -m pylama
     - name: Run pytest
       uses: abatilo/actions-poetry@v1.5.0
       with:
-        python_version: 3.8.0
+        python_version: 3.8.3
         poetry_version: 1.0
         args: run python -m pytest --cov=src --cov-branch --cov-fail-under=100 tests/
