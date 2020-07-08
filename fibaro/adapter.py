@@ -1,8 +1,7 @@
 import requests
 
 from django.conf import settings
-
-from .exceptions import InvalidToken, PageNotFound
+from .exceptions import InvalidToken, PageNotFound, CloudIsDown
 
 
 class Cloud():
@@ -20,8 +19,9 @@ class Cloud():
         headers = {'authorization': f'Token {self.token}'}
         response = requests.request(method, self.url+endpoint,
                                     data=payload, headers=headers)
-        # TODO exceptions, tests,
         if not response.ok:
+            if response.status_code == 502:
+                raise CloudIsDown
             if response.status_code == 404:
                 raise PageNotFound
             if response.json().get("detail") == 'Invalid token.':

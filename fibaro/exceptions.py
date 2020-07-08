@@ -12,3 +12,11 @@ class PageNotFound(Exception):
     def __init__(self) -> None:
         Exception.__init__(self)
         self.message = 'Page not found!'
+
+
+class CloudIsDown(Exception):
+    """Error raised when the YpostirizoCloud is down"""
+
+    def __init__(self) -> None:
+        Exception.__init__(self)
+        self.message = 'Ypostirizo Cloud seems to be down!'
