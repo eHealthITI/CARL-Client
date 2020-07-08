@@ -1,6 +1,9 @@
 from django.conf import settings
 from django.test import TestCase
+
 import pydantic
+import pytest
+
 from fibaro.samples.events import SampleEvents
 from fibaro.validators import EventBase
 from fibaro.ypostirizo import Ypostirizo
@@ -40,11 +43,13 @@ class YpostiriZOAdapterTestCase(TestCase):
     def setUp(self):
         self.samples = SampleEvents()
 
+    @pytest.mark.skip('Skipping as an integration test')
     def test_valid_data(self):
         """test a valid event data object sent to the cloud"""
         response = Ypostirizo(self.samples.valid_events[0])._post()
         self.assertEqual(response.status_code, 201)
 
+    @pytest.mark.skip('Skipping as an integration test')
     def test_invalid_token(self):
         """test a valid event data object sent to the cloud with wrong token"""
         oldToken = settings.CLOUD_TOKEN
