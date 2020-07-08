@@ -1,7 +1,6 @@
-import pydantic
 from django.conf import settings
 from django.test import TestCase
-
+import pydantic
 from fibaro.samples.events import SampleEvents
 from fibaro.validators import EventBase
 from fibaro.ypostirizo import Ypostirizo
@@ -35,7 +34,7 @@ class FibaroTestCase(TestCase):
             self.assertRaises(pydantic.ValidationError, EventBase, **ev)
 
 
-class FibaroAdapter(TestCase):
+class YpostiriZOAdapterTestCase(TestCase):
     """Test the fibaro adapter (ypostirizo client -> ypostirizo cloud"""
 
     def setUp(self):
