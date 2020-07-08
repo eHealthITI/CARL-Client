@@ -8,8 +8,8 @@ from fibaro.validators import EventBase
 from fibaro.ypostirizo import Ypostirizo
 
 
-class FibaroTestCase(TestCase):
-    """Simple test case for basic functionality"""
+class FibaroDataTestCase(TestCase):
+    """Simple test case for basic data functionality"""
 
     def setUp(self):
         self.samples = SampleEvents()
