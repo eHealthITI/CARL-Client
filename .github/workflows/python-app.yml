@@ -1,0 +1,38 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Python application
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install
+      uses: abatilo/actions-poetry@v1.5.0
+      with:
+        python_version: 3.8.3
+        poetry_version: 1.0
+        args: install
+    - name: Lint
+      uses: abatilo/actions-poetry@v1.5.0
+      with:
+        pyhon_version: 3.8.3
+        poetry_version: 1.0
+        args: run python -m pylama
+    - name: Prepare tests
+      run: cp .env.example  .env
+    - name: Run tests
+      uses: abatilo/actions-poetry@v1.5.0
+      with:
+        python_version: 3.8.3
+        poetry_version: 1.0
+        args: run python -m pytest

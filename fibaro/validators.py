@@ -1,12 +1,25 @@
 from pydantic import BaseModel
 
+from ypostirizoclient.settings import CLOUD_USER as user
+
+
+class EventData(BaseModel):
+    id: int
+    property: str
+    oldValue: float
+    newValue: float
+
 
 class Event(BaseModel):
+    type: str
+    data: EventData
+
+
+class EventBase(BaseModel):
     id: int
     type: str
     timestamp: int
     deviceID: int
     deviceType: str
-    propertyName: str
-    oldValue: int
-    newValue: int
+    event: Event
+    user = user

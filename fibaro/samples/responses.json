@@ -1,0 +1,1602 @@
+[
+    {
+      "id": 12532,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594115291,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12531,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594115280,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12530,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594115239,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12529,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594115230,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12528,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594115220,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12527,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594115206,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12526,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594115198,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12525,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594115191,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12524,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594115111,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12523,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594115098,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12522,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594115092,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12521,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594115064,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12520,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594114886,
+      "deviceID": 23,
+      "deviceType": "com.fibaro.lightSensor",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 23,
+          "property": "value",
+          "oldValue": 341.0,
+          "newValue": 470.0
+        }
+      }
+    },
+    {
+      "id": 12519,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594114692,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12518,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594114687,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12517,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594114083,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12516,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594114072,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12515,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594113059,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12514,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594113051,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12513,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594112500,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12512,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594112494,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12511,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594112491,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12510,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594112485,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12509,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594112484,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12508,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594112470,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12507,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594112206,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12506,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594112200,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12505,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594112049,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12504,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594112044,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12503,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111974,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12502,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111966,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12501,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111950,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12500,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111942,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12499,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111902,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12498,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111894,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12497,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111874,
+      "deviceID": 22,
+      "deviceType": "com.fibaro.temperatureSensor",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 22,
+          "property": "value",
+          "oldValue": 26.5,
+          "newValue": 27.1
+        }
+      }
+    },
+    {
+      "id": 12496,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111873,
+      "deviceID": 23,
+      "deviceType": "com.fibaro.lightSensor",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 23,
+          "property": "value",
+          "oldValue": 314.0,
+          "newValue": 341.0
+        }
+      }
+    },
+    {
+      "id": 12495,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111850,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12494,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111844,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12493,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111838,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12492,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111827,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12491,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111686,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12490,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111681,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12489,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111680,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12488,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111672,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12487,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111669,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12486,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111661,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12485,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111518,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12484,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111512,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12483,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111431,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12482,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111421,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12481,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111375,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12480,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111368,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12479,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111247,
+      "deviceID": 23,
+      "deviceType": "com.fibaro.lightSensor",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 23,
+          "property": "value",
+          "oldValue": 460.0,
+          "newValue": 314.0
+        }
+      }
+    },
+    {
+      "id": 12478,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111063,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12477,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594111058,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12476,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594110909,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12475,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594110894,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12474,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594110814,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12473,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594110808,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12472,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594110800,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12471,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594110787,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12470,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594110782,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12469,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594110774,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12468,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594110668,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12467,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594110662,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12466,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594110637,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12465,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594110632,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12464,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594110607,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12463,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594110598,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12462,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594109421,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12461,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594109412,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12460,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594109400,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12459,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594109384,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12458,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594109155,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12457,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594109149,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12456,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594109145,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12455,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594109140,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12454,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108987,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12453,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108982,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12452,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108665,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12451,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108657,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12450,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108650,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12449,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108645,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12448,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108540,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12447,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108534,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12446,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108254,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12445,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108248,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12444,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108241,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12443,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108235,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12442,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108229,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12441,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108221,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12440,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108206,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12439,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108200,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12438,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108197,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12437,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108189,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12436,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108184,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": true,
+          "newValue": false
+        }
+      }
+    },
+    {
+      "id": 12435,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594108178,
+      "deviceID": 21,
+      "deviceType": "com.fibaro.FGMS001v2",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 21,
+          "property": "value",
+          "oldValue": false,
+          "newValue": true
+        }
+      }
+    },
+    {
+      "id": 12434,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594107831,
+      "deviceID": 22,
+      "deviceType": "com.fibaro.temperatureSensor",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 22,
+          "property": "value",
+          "oldValue": 26.7,
+          "newValue": 26.5
+        }
+      }
+    },
+    {
+      "id": 12433,
+      "type": "DEVICE_EVENT",
+      "timestamp": 1594107830,
+      "deviceID": 23,
+      "deviceType": "com.fibaro.lightSensor",
+      "event": {
+        "type": "DevicePropertyUpdatedEvent",
+        "data": {
+          "id": 23,
+          "property": "value",
+          "oldValue": 480.0,
+          "newValue": 460.0
+        }
+      }
+    }
+  ]
