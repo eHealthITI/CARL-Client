@@ -1,5 +1,7 @@
 import requests
+
 from django.conf import settings
+
 from .exceptions import InvalidToken, PageNotFound
 
 

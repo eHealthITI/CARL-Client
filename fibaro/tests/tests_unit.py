@@ -1,9 +1,10 @@
-from django.test import TestCase
-from fibaro.ypostirizo import Ypostirizo
-from fibaro.validators import Event, EventBase
-from fibaro.samples.events import SampleEvents
-from django.conf import settings
 import pydantic
+from django.conf import settings
+from django.test import TestCase
+
+from fibaro.samples.events import SampleEvents
+from fibaro.validators import EventBase
+from fibaro.ypostirizo import Ypostirizo
 
 
 class FibaroTestCase(TestCase):
