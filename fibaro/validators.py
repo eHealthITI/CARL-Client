@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from pydantic.types import List, OptionalInt
+from pydantic.types import List, OptionalInt, Optional
 
 from ypostirizoclient.settings import CLOUD_USER as user
 
@@ -32,10 +32,10 @@ class DeviceProperties(BaseModel):
     zwaveCompany: str
     zwaveInfo: str
     zwaveVersion: str
-    alarmLevel: int
-    alarmType: int
+    alarmLevel: OptionalInt
+    alarmType: OptionalInt
     batteryLevel: int
-    batterLowNotification: bool
+    batteryLowNotification: bool
     categories: List[str]
     configured: bool
     dead: bool
@@ -46,12 +46,12 @@ class DeviceProperties(BaseModel):
     emailNotificationID: int
     emailNotificationType: int
     endPointId: int
-    firmwareUpdate: dict
+    firmwareUpdate: Optional[dict]
     lastBreached: OptionalInt
     log: str
     logTemp: str
     manufacturer: str
-    markasDead: bool
+    markAsDead: bool
     maxInterval: int
     minInterval: int
     model: str
@@ -63,13 +63,13 @@ class DeviceProperties(BaseModel):
     saveLogs: bool
     serialNumber: str
     smsNotificationID: int
-    smsmNotificationType: int
+    smsNotificationType: int
     stepInterval: int
-    tamper: bool
-    updateVersion: str
+    tamper: Optional[bool]
+    updateVersion: Optional[str]
     useTemplate: bool
     userDescription: str
-    value: bool
+    value: Optional[int]
 
 
 class Device(BaseModel):

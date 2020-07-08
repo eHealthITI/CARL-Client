@@ -1,0 +1,106 @@
+[
+    {
+        "id": 34,
+        "name": "Red Button",
+        "roomID": 219,
+        "view": [],
+        "type": "com.fibaro.FGPB101",
+        "baseType": "com.fibaro.remoteSceneController",
+        "enabled": true,
+        "visible": true,
+        "isPlugin": false,
+        "parentId": 33,
+        "viewXml": false,
+        "configXml": false,
+        "interfaces": [
+          "battery",
+          "fibaroFirmwareUpdate",
+          "zwave",
+          "zwaveAlarm",
+          "zwaveCentralScene",
+          "zwaveMultiChannelAssociation",
+          "zwaveWakeup"
+        ],
+        "properties": {
+          "pollingTimeSec": 0,
+          "wakeUpTime": 0,
+          "zwaveCompany": "Fibargroup",
+          "zwaveInfo": "3,4,38",
+          "zwaveVersion": "3.2",
+          "alarmLevel": 0,
+          "alarmType": 0,
+          "batteryLevel": 100,
+          "batteryLowNotification": true,
+          "categories": [
+            "remotes"
+          ],
+          "centralSceneSupport": [
+            {
+              "keyAttributes": [
+                "Pressed",
+                "Released",
+                "HeldDown",
+                "Pressed2",
+                "Pressed3",
+                "Pressed4",
+                "Pressed5"
+              ],
+              "keyId": 1
+            }
+          ],
+          "configured": true,
+          "dead": false,
+          "deadReason": "",
+          "defInterval": 0,
+          "deviceControlType": 0,
+          "deviceIcon": 109,
+          "emailNotificationID": 0,
+          "emailNotificationType": 0,
+          "endPointId": 0,
+          "firmwareUpdate": {
+            "info": "",
+            "progress": 0,
+            "status": "UpToDate",
+            "updateVersion": "3.2"
+          },
+          "icon": {
+            "path": "assets/icon/fibaro/com.fibaro.FGPB101/com.fibaro.FGPB101.png",
+            "source": "HC"
+          },
+          "log": "",
+          "logTemp": "",
+          "manufacturer": "",
+          "markAsDead": true,
+          "maxInterval": 0,
+          "minInterval": 0,
+          "model": "",
+          "nodeId": 5,
+          "panicMode": false,
+          "parametersTemplate": 772,
+          "pendingActions": false,
+          "productInfo": "1,15,15,1,16,0,3,2",
+          "pushNotificationID": 0,
+          "pushNotificationType": 0,
+          "saveLogs": true,
+          "sequences": [],
+          "serialNumber": "h'0000000000019bc0",
+          "smsNotificationID": 0,
+          "smsNotificationType": 0,
+          "stepInterval": 0,
+          "updateVersion": "",
+          "useTemplate": true,
+          "userDescription": ""
+        },
+        "actions": {
+          "abortUpdate": 1,
+          "reconfigure": 0,
+          "retryUpdate": 1,
+          "setInterval": 1,
+          "startUpdate": 1,
+          "updateFirmware": 1
+        },
+        "created": 1594209246,
+        "modified": 1594209246,
+        "sortOrder": 19
+      }
+]
