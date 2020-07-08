@@ -28,7 +28,9 @@ jobs:
         pyhon_version: 3.8.3
         poetry_version: 1.0
         args: run python -m pylama
-    - name: Run pytest
+    - name: Prepare tests
+      run: cp .env.example  .env
+    - name: Run tests
       uses: abatilo/actions-poetry@v1.5.0
       with:
         python_version: 3.8.3
