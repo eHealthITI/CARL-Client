@@ -1,8 +1,7 @@
-from django.conf import settings
-from django.test import TestCase
-
 import pydantic
 import pytest
+from django.conf import settings
+from django.test import TestCase
 
 from fibaro.samples.events import SampleEvents
 from fibaro.validators import EventBase
