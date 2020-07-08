@@ -1,4 +1,5 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+from ypostirizoclient.settings import CLOUD_USER as user
 
 
 class EventData(BaseModel):
@@ -15,10 +16,9 @@ class Event(BaseModel):
 
 class EventBase(BaseModel):
     id: int
-    user: int
-    event_type: str
     type: str
     timestamp: int
     deviceID: int
     deviceType: str
     event: Event
+    user = user

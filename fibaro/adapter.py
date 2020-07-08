@@ -5,7 +5,8 @@ from .exceptions import InvalidToken, PageNotFound
 
 class Cloud():
     """The class that describes functionality from ypostirizoClient
-    to ypostirizoCloud"""
+    to ypostirizoCloud.
+    """
 
     def __init__(self):
         """Basic data initialization"""
