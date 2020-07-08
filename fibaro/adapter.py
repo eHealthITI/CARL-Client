@@ -19,7 +19,7 @@ class Cloud():
         response = requests.request(method, self.url+endpoint,
                                     data=payload, headers=headers)
         if not response.ok:
-            if response.status_code == 502:
+            if response.status_code >= 500:
                 raise CloudIsDown
             if response.status_code == 404:
                 raise PageNotFound
