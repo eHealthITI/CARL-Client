@@ -7,4 +7,3 @@ class HomeCenter():
 
     def __init__(self, initial_data=None):
         self.event = EventBase(**initial_data)
-

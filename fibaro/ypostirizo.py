@@ -1,4 +1,3 @@
-from .adapter import Cloud
 from .validators import EventBase
 import requests
 
