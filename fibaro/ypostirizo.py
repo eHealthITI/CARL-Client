@@ -1,8 +1,8 @@
-from .validators import EventBase
 import requests
-
 from django.conf import settings
-from .exceptions import InvalidToken, PageNotFound, CloudIsDown
+
+from fibaro.exceptions import CloudIsDown, InvalidToken, PageNotFound
+from fibaro.validators import EventBase
 
 
 class Cloud():
@@ -15,13 +15,15 @@ class Cloud():
         self.token = settings.CLOUD_TOKEN
         self.url = settings.CLOUD_URL
 
-    def send(self, endpoint='/device/events/', payload=None, method='GET'):
+    def send(self, endpoint='/device/events/', payload=None,
+             method='GET', headers=None, qs=None):
         """Send data [event] to ypostirizoCloud"""
-        headers = {'authorization': f'Token {self.token}'}
+        if not headers:
+            headers = {'authorization': f'Token {self.token}'}
         response = requests.request(method, self.url+endpoint,
-                                    data=payload, headers=headers)
+                                    data=payload, headers=headers, params=qs)
         if not response.ok:
-            if response.status_code >= 500:
+            if response.status_code == 501:
                 raise CloudIsDown
             if response.status_code == 404:
                 raise PageNotFound

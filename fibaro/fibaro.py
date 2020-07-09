@@ -1,4 +1,4 @@
-from .validators import EventBase
+from fibaro.validators import EventBase
 
 
 class HomeCenter():
