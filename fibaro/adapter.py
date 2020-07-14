@@ -1,6 +1,6 @@
 import requests
 from django.conf import settings
-from .exceptions import InvalidToken, PageNotFound, CloudIsDown, NotImplemented
+from .exceptions import InvalidToken, PageNotFound, CloudIsDown, EndpointNotImplemented
 
 from fibaro.ypostirizo import Cloud
 
@@ -25,7 +25,7 @@ class HomecenterAdapter():
 
         if not response.ok:
             if response.status_code == 501:
-                raise NotImplemented
+                raise EndpointNotImplemented
             if response.status_code >= 500:
                 raise CloudIsDown
             if response.status_code == 404:
