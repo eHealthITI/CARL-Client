@@ -22,7 +22,7 @@ class CloudIsDown(Exception):
         self.message = 'Ypostirizo Cloud seems to be down!'
 
 
-class NotImplemented(Exception):
+class EndpointNotImplemented(Exception):
     """Error raised when the endpoint is not implemented"""
 
     def __init__(self) -> None:

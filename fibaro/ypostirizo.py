@@ -1,8 +1,8 @@
-import requests
-from django.conf import settings
-
-from fibaro.exceptions import CloudIsDown, InvalidToken, PageNotFound
 from fibaro.validators import EventBase
+import requests
+
+from django.conf import settings
+from fibaro.exceptions import InvalidToken, PageNotFound, CloudIsDown, EndpointNotImplemented
 
 
 class Cloud():
@@ -24,6 +24,8 @@ class Cloud():
                                     data=payload, headers=headers, params=qs)
         if not response.ok:
             if response.status_code == 501:
+                raise EndpointNotImplemented
+            if response.status_code >= 500:
                 raise CloudIsDown
             if response.status_code == 404:
                 raise PageNotFound
