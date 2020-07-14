@@ -15,6 +15,7 @@ class GlobalConfig(BaseSettings):
     CLOUD_URL: Optional[str] = Field(None, env='CLOUD_URL')
     CLOUD_TOKEN: Optional[str] = Field(None, env='CLOUD_TOKEN')
     HC_TOKEN: Optional[str] = Field(None, env='HC_TOKEN')
+    HC_PASSWORD: Optional[str] = Field(None, env='HC_PASSWORD')
     HC_USER: Optional[str] = Field(None, env='HC_USER')
     HC_URL: Optional[str] = Field(None, env='HC_URL')
     SUBJECT_ID: Optional[int] = Field(None, env='SUBJECT_ID')
