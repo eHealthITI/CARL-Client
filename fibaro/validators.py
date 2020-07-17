@@ -3,8 +3,6 @@ from typing import Union
 from pydantic import BaseModel
 from pydantic.types import List, Optional, OptionalInt
 
-from ypostirizoclient.settings import CLOUD_USER as user
-
 
 class EventBase(BaseModel):
     id: int

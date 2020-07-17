@@ -34,9 +34,9 @@ class HomeCenterAdapter(Cloud):
             method=method, headers=headers, qs=params
         )
 
-    def push(self, from="1594628392", to="1594714792"):
+    def push(self, time_from="1594628392", time_to="1594714792"):
         """Receive data from Home center
         and push them to YpostiriZO Cloud."""
-        payload = self.get(f"/panels/event?from={from}&to={to}")
+        payload = self.get(f"/panels/event?from={time_from}&to={time_to}")
         respone = Cloud.send(self, "/device/events/", payload)
         return respone
