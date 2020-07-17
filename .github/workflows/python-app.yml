@@ -19,13 +19,13 @@ jobs:
     - name: Install
       uses: abatilo/actions-poetry@v1.5.0
       with:
-        python_version: 3.8.4
+        python_version: 3.8.3
         poetry_version: 1.0
         args: install
     - name: Lint
       uses: abatilo/actions-poetry@v1.5.0
       with:
-        pyhon_version: 3.8.4
+        python_version: 3.8.3
         poetry_version: 1.0
         args: run python -m pylama
     - name: Prepare tests
@@ -33,6 +33,6 @@ jobs:
     - name: Run tests
       uses: abatilo/actions-poetry@v1.5.0
       with:
-        python_version: 3.8.4
+        python_version: 3.8.3
         poetry_version: 1.0
         args: run python -m pytest
