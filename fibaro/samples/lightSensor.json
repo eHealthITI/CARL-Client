@@ -1,18 +1,13 @@
 [
-    {
-        "id": 12520,
-        "type": "DEVICE_EVENT",
-        "timestamp": 1594114886,
-        "deviceID": 23,
-        "deviceType": "com.fibaro.lightSensor",
-        "event": {
-          "type": "DevicePropertyUpdatedEvent",
-          "data": {
-            "id": 23,
-            "property": "value",
-            "oldValue": 341.0,
-            "newValue": 470.0
-          }
-        }
-      }
+  {
+    "id": 5871,
+    "type": "DEVICE_PROPERTY_CHANGED",
+    "timestamp": 1594700653,
+    "deviceID": 19,
+    "deviceType": "com.fibaro.lightSensor",
+    "propertyName": "value",
+    "oldValue": 10.0,
+    "newValue": 12.0,
+    "icon": null
+  }
 ]
