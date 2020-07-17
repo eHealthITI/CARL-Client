@@ -4,7 +4,7 @@ from fibaro.ypostirizo import Cloud
 import base64
 
 
-class HomecenterAdapter(Cloud):
+class HomeCenterAdapter(Cloud):
     """The class that describes functionality from homecenter
     to ypostirizoClient.
     """
@@ -20,7 +20,7 @@ class HomecenterAdapter(Cloud):
         to_encode = hash_constructor.encode('ascii')
         encoded = base64.b64encode(to_encode).decode('utf-8')
 
-        self.token = f'Basic {encoded}'
+        self.token = encoded
 
     def get(self, endpoint='/panels/event', payload=None, method='GET', params=None):
         headers = {
@@ -29,7 +29,14 @@ class HomecenterAdapter(Cloud):
             'accept-language': "en",
             'authorization': f"Basic  {self.token}"
         }
-        return super(HomecenterAdapter, self).send(
+        return super(HomeCenterAdapter, self).send(
             endpoint=endpoint, payload=payload,
             method=method, headers=headers, qs=params
         )
+
+    def push(self, from="1594628392", to="1594714792"):
+        """Receive data from Home center
+        and push them to YpostiriZO Cloud."""
+        payload = self.get(f"/panels/event?from={from}&to={to}")
+        respone = Cloud.send(self, "/device/events/", payload)
+        return respone
