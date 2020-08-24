@@ -1,18 +1,13 @@
 [
-    {
-        "id": 12434,
-        "type": "DEVICE_EVENT",
-        "timestamp": 1594107831,
-        "deviceID": 22,
-        "deviceType": "com.fibaro.temperatureSensor",
-        "event": {
-          "type": "DevicePropertyUpdatedEvent",
-          "data": {
-            "id": 22,
-            "property": "value",
-            "oldValue": 26.7,
-            "newValue": 26.5
-          }
-        }
-      }
+  {
+    "id": 7826,
+    "type": "DEVICE_PROPERTY_CHANGED",
+    "timestamp": 1594973502,
+    "deviceID": 18,
+    "deviceType": "com.fibaro.temperatureSensor",
+    "propertyName": "value",
+    "oldValue": 26.5,
+    "newValue": 26.7,
+    "icon": null
+  }
 ]

@@ -67,9 +67,13 @@ USE_L10N = True
 USE_TZ = True
 STATIC_URL = '/static/'
 # Project Specific params.
-# Change inside .env file 
+# Change inside .env file
 SUBJECT_ID = cnf.SUBJECT_ID
 CLOUD_TOKEN = cnf.CLOUD_TOKEN
+HC_TOKEN = cnf.HC_TOKEN
+HC_PASSWORD = cnf.HC_PASSWORD
+HC_URL = cnf.HC_URL
+HC_USER = cnf.HC_USER
 CLOUD_URL = cnf.CLOUD_URL
 CLOUD_USER = cnf.CLOUD_USER
 DEBUG = cnf.DEBUG

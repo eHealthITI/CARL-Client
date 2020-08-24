@@ -20,3 +20,12 @@ class CloudIsDown(Exception):
     def __init__(self) -> None:
         Exception.__init__(self)
         self.message = 'Ypostirizo Cloud seems to be down!'
+
+
+class EndpointNotImplemented(Exception):
+    """Error raised when the endpoint is not implemented"""
+
+    def __init__(self) -> None:
+        Exception.__init__(self)
+        self.message = 'The method is not implemented. Make sure you are calling\
+                        the right endpoint!'

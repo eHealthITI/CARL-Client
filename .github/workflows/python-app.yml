@@ -25,7 +25,7 @@ jobs:
     - name: Lint
       uses: abatilo/actions-poetry@v1.5.0
       with:
-        pyhon_version: 3.8.3
+        python_version: 3.8.3
         poetry_version: 1.0
         args: run python -m pylama
     - name: Prepare tests

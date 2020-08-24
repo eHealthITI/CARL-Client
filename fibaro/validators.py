@@ -1,20 +1,7 @@
-from pydantic import BaseModel
-from pydantic.types import List, OptionalInt, Optional
-
 from typing import Union
-from ypostirizoclient.settings import CLOUD_USER as user
 
-
-class EventData(BaseModel):
-    id: int
-    property: str
-    oldValue: float
-    newValue: float
-
-
-class Event(BaseModel):
-    type: str
-    data: EventData
+from pydantic import BaseModel
+from pydantic.types import List, Optional, OptionalInt
 
 
 class EventBase(BaseModel):
@@ -23,23 +10,25 @@ class EventBase(BaseModel):
     timestamp: int
     deviceID: int
     deviceType: str
-    event: Event
-    user = user
+    propertyName: str
+    oldValue = int
+    newValue = int
 
 
 class DeviceProperties(BaseModel):
-    UIMesageSendTime: OptionalInt
-    autoconfig: OptionalInt
-    alarmLevel: OptionalInt
-    alarmType: OptionalInt
-    batteryLevel: OptionalInt
-    batteryLowNotification: Optional[bool]
-    categories: Optional[List[str]]
+    UIMessageSendTime: OptionalInt
+    autoConfig: OptionalInt
+    armConfig: Optional[str]
+    alarmDelay: Optional[str]
+    armError: Optional[str]
+    armed: Optional[str]
+    alarmExclude: Optional[str]
+    alarmTimeTimestamp: Optional[str]
+    batteryLevel: Optional[int]
+    batteryLowNotification: Optional[str]
     configured: bool
     date: Optional[str]
     dead: bool
-    deadReason: Optional[str]
-    defInterval: OptionalInt
     deviceControlType: int
     deviceIcon: int
     disabled: OptionalInt
@@ -47,16 +36,16 @@ class DeviceProperties(BaseModel):
     emailNotificationType: int
     endPoint: Optional[int]
     endPointId: int
-    firmwareUpdate: Optional[dict]
-    lastBreached: OptionalInt
+    fibaroAlarm: Optional[bool]
+    interval: Optional[int]
+    homeIdHash: Optional[str]
+    lastBreached: Optional[str]
     liliOffCommand: Optional[str]
     liliOnCommand: Optional[str]
     log: str
     logTemp: str
     manufacturer: str
     markAsDead: bool
-    maxInterval: OptionalInt
-    minInterval: OptionalInt
     model: str
     nodeId: int
     parameters: Optional[list]
@@ -64,26 +53,31 @@ class DeviceProperties(BaseModel):
     pendingActions: Optional[bool]
     pollingDeadDevice: Optional[bool]
     pollingTime: OptionalInt
-    pollingNextTime: OptionalInt
+    pollingTimeNext: OptionalInt
     pollingTimeSec: int
     productInfo: str
     pushNotificationID: int
     pushNotificationType: OptionalInt
     remoteGatewayId: OptionalInt
+    requestNodeNeighborStatTimeStemp: Optional[str]
+    requestNodeNeighborState: Optional[str]
+    requestNodeNeighborStateTimeStemp: Optional[str]
     saveLogs: bool
     serialNumber: str
+    showChildren: Optional[str]
     smsNotificationID: int
     smsNotificationType: int
     status: Optional[str]
-    stepInterval: OptionalInt
-    tamper: Optional[bool]
-    updateVersion: Optional[str]
+    sunriseHour: Optional[str]
+    sunsetHour: Optional[str]
     useTemplate: bool
     userDescription: str
-    value: Union[Optional[int], Optional[float], Optional[dict]]
-    wakeUpTime: OptionalInt
+    value: Union[Optional[str], Optional[float], Optional[dict]]
+    wakeUpTime: Optional[int]
+    zwaveBuildVersion: Optional[str]
     zwaveCompany: str
     zwaveInfo: str
+    zwaveRegion: Optional[str]
     zwaveVersion: str
 
 
@@ -91,15 +85,15 @@ class Device(BaseModel):
     id: int
     name: str
     roomID: int
-    view: List[dict]
     type: str
     baseType: str
     enabled: bool
     visible: bool
     isPlugin: bool
     parentId: int
-    viewXml: bool
-    configXml: bool
+    remoteGatewayId: Optional[int]
+    viewXml: Optional[bool]
+    configXml: Optional[bool]
     interfaces: List[str]
     properties: DeviceProperties
     actions: dict

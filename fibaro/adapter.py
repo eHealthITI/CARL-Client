@@ -1,29 +1,42 @@
-import requests
 from django.conf import settings
-from .exceptions import InvalidToken, PageNotFound, CloudIsDown
+from fibaro.ypostirizo import Cloud
+
+import base64
 
 
-class Cloud():
-    """The class that describes functionality from ypostirizoClient
-    to ypostirizoCloud.
+class HomeCenterAdapter(Cloud):
+    """The class that describes functionality from homecenter
+    to ypostirizoClient.
     """
 
     def __init__(self):
         """Basic data initialization"""
-        self.token = settings.CLOUD_TOKEN
-        self.url = settings.CLOUD_URL
+        Cloud.__init__(self)
+        self.password = settings.HC_PASSWORD
+        self.url = settings.HC_URL
+        self.user = settings.HC_USER
 
-    def send(self, endpoint='/device/events/', payload=None, method='GET'):
-        """Send data [event] to ypostirizoCloud"""
-        headers = {'authorization': f'Token {self.token}'}
-        response = requests.request(method, self.url+endpoint,
-                                    data=payload, headers=headers)
-        if not response.ok:
-            if response.status_code >= 500:
-                raise CloudIsDown
-            if response.status_code == 404:
-                raise PageNotFound
-            if response.json().get("detail") == 'Invalid token.':
-                raise InvalidToken
-            return response
-        return response
+        hash_constructor = self.user+':'+self.password
+        to_encode = hash_constructor.encode('ascii')
+        encoded = base64.b64encode(to_encode).decode('utf-8')
+
+        self.token = encoded
+
+    def get(self, endpoint='/panels/event', payload=None, method='GET', params=None):
+        headers = {
+            'accept': "application/json",
+            'x-fibaro-version': "2",
+            'accept-language': "en",
+            'authorization': f"Basic  {self.token}"
+        }
+        return super(HomeCenterAdapter, self).send(
+            endpoint=endpoint, payload=payload,
+            method=method, headers=headers, qs=params
+        )
+
+    def push(self, time_from="1594628392", time_to="1594714792"):
+        """Receive data from Home center
+        and push them to YpostiriZO Cloud."""
+        payload = self.get(f"/panels/event?from={time_from}&to={time_to}")
+        respone = Cloud.send(self, "/device/events/", payload)
+        return respone
