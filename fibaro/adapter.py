@@ -22,21 +22,24 @@ class HomeCenterAdapter(Cloud):
 
         self.token = encoded
 
-    def get(self, endpoint='/panels/event', payload=None, method='GET', params=None):
+    def get(self, endpoint='/api/devices', payload=None, method='GET', params=None):
         headers = {
             'accept': "application/json",
             'x-fibaro-version': "2",
             'accept-language': "en",
-            'authorization': f"Basic  {self.token}"
+            'authorization': f"Basic  {settings.HC_TOKEN}"
         }
         return super(HomeCenterAdapter, self).send(
             endpoint=endpoint, payload=payload,
             method=method, headers=headers, qs=params
         )
 
-    def push(self, time_from="1594628392", time_to="1594714792"):
+    def push(self, payload):
         """Receive data from Home center
         and push them to YpostiriZO Cloud."""
-        payload = self.get(f"/panels/event?from={time_from}&to={time_to}")
-        respone = Cloud.send(self, "/device/events/", payload)
-        return respone
+        headers = {
+            'Authorization': f"Token {settings.CLOUD_TOKEN}"
+        }
+        response = Cloud.send(self, headers=headers, endpoint="/api/device/events/new_event/", payload=payload)
+        return response
+
