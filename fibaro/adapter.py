@@ -27,7 +27,7 @@ class HomeCenterAdapter(Cloud):
             'accept': "application/json",
             'x-fibaro-version': "2",
             'accept-language': "en",
-            'authorization': f"Basic  {settings.HC_TOKEN}"
+            'authorization': f"Basic  {self.token}"
         }
         return super(HomeCenterAdapter, self).send(
             endpoint=endpoint, payload=payload,
