@@ -1,3 +1,5 @@
+import logging
+
 from fibaro.validators import EventBase
 import requests
 
@@ -15,8 +17,11 @@ class Cloud():
         self.token = settings.CLOUD_TOKEN
         self.url = settings.CLOUD_URL
 
-    def send(self, endpoint='/device/events/', payload=None,
-             method='GET', headers=None, qs=None):
+    def send(self, endpoint='api/device/events/new_event',
+             payload=None,
+             method='POST',
+             headers=None,
+             qs=None):
         """Send data [event] to ypostirizoCloud"""
         if not headers:
             headers = {'authorization': f'Token {self.token}'}
