@@ -54,8 +54,8 @@ class EventBase(models.Model):
     timestamp = models.IntegerField()
     device = models.ForeignKey(Device, on_delete=models.CASCADE)
     device_type = models.TextField()
-    property_name = models.TextField()
-    value = models.IntegerField()
+    property_name = models.TextField(null=True)
+    value = models.IntegerField(null=True)
     event = models.TextField(null=True)
 
     def read_json(self, event_dict):
@@ -63,11 +63,14 @@ class EventBase(models.Model):
             self.event_id = event_dict.get('id')
             self.event_type = event_dict.get('type')
             self.timestamp = event_dict.get('timestamp')
-            self.device_id = Device.objects.get(pk=event_dict.get('deviceID'))
+            self.device = Device.objects.get(pk=event_dict.get('deviceID'))
             self.device_type = event_dict.get('deviceType')
             self.property_name = event_dict.get('propertyName')
             self.value = event_dict.get('newValue')
-            self.event = event_dict.get('event').get('data').get('keyAttribute')
+            if 'event' in event_dict.keys():
+                self.event = event_dict.get('event').get('data').get('keyAttribute')
+            else:
+                self.event = None
         except models.ObjectDoesNotExist:
             logging.info("Device ID:{}".format(event_dict.get('deviceID')))
             find_devices()
