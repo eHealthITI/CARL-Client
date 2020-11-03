@@ -16,17 +16,19 @@ class Cloud():
         """Basic data initialization"""
         self.token = settings.CLOUD_TOKEN
         self.url = settings.CLOUD_URL
+        self.headers = {'authorization': f'Token {self.token}'}
 
-    def send(self, endpoint='api/device/events/new_event',
-             payload=None,
-             method='POST',
-             headers=None,
-             qs=None):
-        """Send data [event] to ypostirizoCloud"""
-        if not headers:
-            headers = {'authorization': f'Token {self.token}'}
-        response = requests.request(method, self.url+endpoint,
-                                    data=payload, headers=headers, params=qs)
+    def send(self, endpoint=None,
+             payload=None):
+        """
+        Sends list of EventBase objects to the cloud in json
+        format.
+        """
+        response = requests.request(method='POST',
+                                    url=self.url+endpoint,
+                                    data=payload,
+                                    headers=self.headers)
+
         if not response.ok:
             if response.status_code == 501:
                 raise EndpointNotImplemented
