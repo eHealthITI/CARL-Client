@@ -42,7 +42,5 @@ class HomeCenterAdapter(Cloud):
                                         params=parameters
                                         )
             return response
-
         except HTTPError as ex:
             logging.warning(ex)
-
