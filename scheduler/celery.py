@@ -22,13 +22,13 @@ app.conf.beat_schedule = {
         'task': 'scheduler.Fibaro.tasks.get_sensor_data',
         'schedule': settings.HC_API_EVENT_INTERVAL
     },
-    'push-latest-events': {
-        'task': 'scheduler.Cloud.tasks.upload_events',
-        'schedule': 30   # seconds
-    },
     'push-new-devices': {
         'task': 'scheduler.Cloud.tasks.update_devices',
-        'schedule': 15  # seconds
+        'schedule': 180  # seconds
+    },
+    'push-latest-events': {
+        'task': 'scheduler.Cloud.tasks.upload_events',
+        'schedule': 300   # seconds
     }
 
 }
