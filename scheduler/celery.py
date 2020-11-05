@@ -8,18 +8,29 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ypostirizoclient.settings')
 
 app = Celery('scheduler',
              broker='redis://localhost:6379',
-             include=['scheduler.tasks'])
+             include=['scheduler.Cloud.tasks',
+                      'scheduler.Fibaro.tasks'])
+
 app.config_from_object('scheduler.celeryconfig')
 
 app.conf.beat_schedule = {
     'check-for-new-events': {
-        'task': 'scheduler.tasks.get_events_from_fibaro',
+        'task': 'scheduler.Fibaro.tasks.get_events',
+        'schedule': settings.HC_API_EVENT_INTERVAL
+    },
+    'check-for-new-devices': {
+        'task': 'scheduler.Fibaro.tasks.get_sensor_data',
         'schedule': settings.HC_API_EVENT_INTERVAL
     },
     'push-latest-events': {
-        'task': 'scheduler.tasks.send_to_cloud',
-        'schedule': settings.DB_EVENT_INTERVAL
+        'task': 'scheduler.Cloud.tasks.upload_events',
+        'schedule': 30   # seconds
+    },
+    'push-new-devices': {
+        'task': 'scheduler.Cloud.tasks.update_devices',
+        'schedule': 15  # seconds
     }
+
 }
 
 if __name__ == '__main__':
