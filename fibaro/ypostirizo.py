@@ -7,7 +7,7 @@ from django.conf import settings
 from fibaro.exceptions import InvalidToken, PageNotFound, CloudIsDown, EndpointNotImplemented
 
 
-class Cloud():
+class Cloud:
     """The class that describes functionality from ypostirizoClient
     to ypostirizoCloud.
     """
@@ -24,6 +24,7 @@ class Cloud():
         Sends list of EventBase objects to the cloud in json
         format.
         """
+
         response = requests.request(method='POST',
                                     url=self.url+endpoint,
                                     data=payload,
@@ -42,17 +43,3 @@ class Cloud():
         return response
 
 
-class Ypostirizo():
-    """YpostiriZO adapter to push data to the cloud.
-    initial_data: dict | EventBase Instance
-    """
-
-    def __init__(self, initial_data=None):
-        self.event = EventBase(**initial_data)
-
-    def _post(self):
-        """Posts the self.event to the cloud to create a new event."""
-        return Cloud().send(
-            payload=self.event.dict(),
-            method='POST'
-        )
