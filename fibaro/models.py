@@ -1,10 +1,8 @@
 import json
 import logging
-
 from django.contrib.postgres.fields import JSONField
 from django.db import models
-
-from scheduler.tasks import find_devices
+from scheduler.Fibaro import tasks as fibaro
 
 
 class Device(models.Model):
@@ -16,7 +14,7 @@ class Device(models.Model):
     enabled = models.BooleanField()
     visible = models.BooleanField()
     is_plugin = models.BooleanField()
-    parent_id = models.IntegerField()
+    parent_id = models.ForeignKey('self', on_delete=models.CASCADE, related_name='device', null=True)
     remote_gateway_id = models.IntegerField(null=True)
     view_xml = models.BooleanField(null=True)
     config_xml = models.BooleanField(null=True)
@@ -36,7 +34,7 @@ class Device(models.Model):
         self.enabled = device_dict.get('enabled')
         self.visible = device_dict.get('visible')
         self.is_plugin = device_dict.get('isPlugin')
-        self.parent_id = device_dict.get('parentId')
+        self.parent_id = Device.objects.get(pk=device_dict.get('parentId'))
         self.remote_gateway_id = device_dict.get('remoteGatewayId')
         self.view_xml = device_dict.get('viewXml')
         self.config_xml = device_dict.get('configXml')
@@ -73,4 +71,70 @@ class EventBase(models.Model):
                 self.event = None
         except models.ObjectDoesNotExist:
             logging.info("Device ID:{}".format(event_dict.get('deviceID')))
-            find_devices()
+            fibaro.get_sensor_data()
+
+
+# class DeviceProperties(models.Model):
+#     UIMessageSendTime = models.IntegerField(null=True)
+#     autoConfig = models.IntegerField(null=True)
+#     armConfig = models.TextField(null=True)
+#     alarmDelay = models.TextField(null=True)
+#     armError = models.TextField(null=True)
+#     armed = models.TextField(null=True)
+#     alarmExclude = models.TextField(null=True)
+#     alarmTimeTimestamp = models.TextField(null=True)
+#     batteryLevel = models.IntegerField(null=True)
+#     batteryLowNotification = models.TextField(null=True)
+#     configured = models.BooleanField()
+#     date = models.TextField(null=True)
+#     dead = models.BooleanField()
+#     deviceControlType = models.IntegerField()
+#     deviceIcon = models.IntegerField()
+#     disabled = models.IntegerField(null=True)
+#     emailNotificationID = models.IntegerField()
+#     emailNotificationType = models.IntegerField()
+#     endPoint = models.IntegerField(null=True)
+#     endPointId = models.IntegerField()
+#     fibaroAlarm = models.BooleanField(null=True)
+#     interval = models.IntegerField(null=True)
+#     homeIdHash = models.TextField(null=True)
+#     lastBreached = models.TextField(null=True)
+#     liliOffCommand = models.TextField(null=True)
+#     liliOnCommand = models.TextField(null=True)
+#     log = models.TextField()
+#     logTemp = models.TextField()
+#     manufacturer = models.TextField()
+#     markAsDead = models.BooleanField()
+#     model = models.TextField()
+#     nodeId = models.IntegerField()
+#     parameters = JSONField()
+#     parametersTemplate = models.IntegerField()
+#     pendingActions = models.BooleanField(null=True)
+#     pollingDeadDevice = models.BooleanField(null=True)
+#     pollingTime = models.IntegerField(null=True)
+#     pollingTimeNext = models.IntegerField(null=True)
+#     pollingTimeSec = models.IntegerField()
+#     productInfo = models.TextField()
+#     pushNotificationID = models.IntegerField()
+#     pushNotificationType = models.IntegerField(null=True)
+#     remoteGatewayId = models.IntegerField(null=True)
+#     requestNodeNeighborStatTimeStemp = models.TextField(null=True)
+#     requestNodeNeighborState = models.TextField(null=True)
+#     requestNodeNeighborStateTimeStemp = models.TextField(null=True)
+#     saveLogs = models.BooleanField()
+#     serialNumber = models.TextField()
+#     showChildren = models.TextField(null=True)
+#     smsNotificationID = models.IntegerField()
+#     smsNotificationType = models.IntegerField()
+#     status = models.TextField(null=True)
+#     sunriseHour = models.TextField(null=True)
+#     sunsetHour = models.TextField(null=True)
+#     useTemplate = models.BooleanField()
+#     userDescription = models.TextField()
+#     value = JSONField()
+#     wakeUpTime = models.IntegerField(null=True)
+#     zwaveBuildVersion = models.TextField(null=True)
+#     zwaveCompany = models.TextField()
+#     zwaveInfo = models.TextField()
+#     zwaveRegion = models.TextField(null=True)
+#     zwaveVersion = models.TextField()
