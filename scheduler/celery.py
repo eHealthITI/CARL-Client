@@ -24,11 +24,11 @@ app.conf.beat_schedule = {
     },
     'push-new-devices': {
         'task': 'scheduler.Cloud.tasks.update_devices',
-        'schedule': 180  # seconds
+        'schedule': settings.CLOUD_DEVICES_INTERVAL  # seconds
     },
     'push-latest-events': {
         'task': 'scheduler.Cloud.tasks.upload_events',
-        'schedule': 300   # seconds
+        'schedule': settings.CLOUD_EVENTS_INTERVAL  # seconds
     }
 
 }
