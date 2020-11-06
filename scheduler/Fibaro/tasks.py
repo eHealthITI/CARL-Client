@@ -17,6 +17,10 @@ app = Celery('tasks', broker='redis://localhost:6379//')
 
 @app.task
 def get_sensor_data():
+    """
+    Async tasks that fetches (on a scheduled basis) data regarding
+    the Fibaro sensors via Home Center lite's API endpoint.
+    """
     home_center_adapter = HomeCenterAdapter()
 
     devices = home_center_adapter.get(endpoint='/api/devices', method='GET').json()
@@ -28,6 +32,11 @@ def get_sensor_data():
 
 @app.task
 def get_events():
+    """
+    Async tasks that fetches (on a scheduled basis) data regarding
+    the Events that were registered on the Home Center Lite via
+    the hub's API endpoint.
+    """
     home_center_adapter = HomeCenterAdapter()
     parameters = {}
     event_max_time = fibaro.models.EventBase.objects.all().aggregate(Max('timestamp')).get('timestamp__max')
