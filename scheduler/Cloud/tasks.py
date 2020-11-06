@@ -12,14 +12,18 @@ app = Celery('tasks', broker='redis://localhost:6379//')
 
 @app.task
 def update_devices():
+    """
+    Async tasks that pushes data (on a scheduled basis) regarding
+    the devices from local DB to YpostiriZO Cloud.
+    """
     cloud = Cloud()
-    current_time = int(datetime.now().timestamp())
-    #latest_devices = fibaro.models.Device.objects.filter(created__gt=current_time - settings.DB_EVENT_INTERVAL)
     latest_devices = fibaro.models.Device.objects.all()
     device_list = []
     if latest_devices:
         for dev in latest_devices:
             props = json.loads(dev.properties)
+            if props['batteryLevel'] == 255:
+                props['batteryLevel'] = 1
             if dev.device_type not in settings.IGNORED_DEVICES:
                 device = {'type_of': settings.TYPE_OF_CHOICES[dev.baseType],
                           'serial': props.get('serialNumber'),
@@ -37,9 +41,13 @@ def update_devices():
 
 @app.task
 def upload_events():
+    """
+    Async tasks that pushes data (on a scheduled basis) regarding
+    the events from local DB to YpostiriZO Cloud.
+    """
     cloud = Cloud()
     current_time = int(datetime.now().timestamp())
-    latest_events = fibaro.models.EventBase.objects.filter(timestamp__gte=current_time - settings.DB_EVENT_INTERVAL)
+    latest_events = fibaro.models.EventBase.objects.filter(timestamp__gte=current_time - 600).order_by('pk')
     event_list = []
     if latest_events:
         for ev in latest_events:
