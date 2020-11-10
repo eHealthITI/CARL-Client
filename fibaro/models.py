@@ -1,14 +1,52 @@
 import json
 import logging
-from django.contrib.postgres.fields import JSONField
+from django.contrib.postgres.fields import JSONField, ArrayField
 from django.db import models
 from scheduler.Fibaro import tasks as fibaro
+
+
+class Section(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.TextField()
+    sort_order = models.IntegerField(null=True)
+
+    def read_json(self, event_dict):
+        self.id = event_dict.get('id')
+        self.name = event_dict.get('name')
+        self.sort_order = event_dict.get('SortOrder')
+
+
+class Room(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.TextField()
+    scene = models.ForeignKey(Section, on_delete=models.CASCADE)
+    icon = models.TextField(null=True)
+    default_sensors = ArrayField(models.IntegerField(null=True, blank=True), null=True)
+    default_thermostat = models.IntegerField(null=True)  # It's the position of the object in the array defaultSensors.
+    created = models.IntegerField(null=True)
+    modified = models.IntegerField(null=True)
+    sort_order = models.IntegerField(null=True)
+
+    def read_json(self, rooms):
+        try:
+            self.id = rooms.get('id')
+            self.name = rooms.get('name')
+            self.section = Section.objects.get(pk=rooms.get('sectionID'))
+            self.icon = rooms.get('icon')
+            self.default_sensors = rooms.get('defaultSensors')
+            self.default_thermostat = self.default_sensors[rooms.get('defaultThermostat')]
+            self.created = rooms.get('created')
+            self.modified = rooms.get('modified')
+            self.sort_order = rooms.get('sortOrder')
+        except models.ObjectDoesNotExist:
+            logging.info("Device ID:{}".format(rooms.get('deviceID')))
+            fibaro.get_sensor_data()
 
 
 class Device(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.TextField()
-    room_id = models.IntegerField()
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)
     device_type = models.TextField()
     baseType = models.TextField()
     enabled = models.BooleanField()
@@ -28,7 +66,7 @@ class Device(models.Model):
     def read_json(self, device_dict):
         self.id = device_dict.get('id')
         self.name = device_dict.get('name')
-        self.room_id = device_dict.get('roomID')
+        self.room = device_dict.get('roomID')
         self.device_type = device_dict.get('type')
         self.baseType = device_dict.get('baseType')
         self.enabled = device_dict.get('enabled')
@@ -53,7 +91,7 @@ class EventBase(models.Model):
     device = models.ForeignKey(Device, on_delete=models.CASCADE)
     device_type = models.TextField()
     property_name = models.TextField(null=True)
-    value = models.IntegerField(null=True)
+    value = models.FloatField(null=True)
     event = models.TextField(null=True)
 
     def read_json(self, event_dict):
@@ -72,69 +110,3 @@ class EventBase(models.Model):
         except models.ObjectDoesNotExist:
             logging.info("Device ID:{}".format(event_dict.get('deviceID')))
             fibaro.get_sensor_data()
-
-
-# class DeviceProperties(models.Model):
-#     UIMessageSendTime = models.IntegerField(null=True)
-#     autoConfig = models.IntegerField(null=True)
-#     armConfig = models.TextField(null=True)
-#     alarmDelay = models.TextField(null=True)
-#     armError = models.TextField(null=True)
-#     armed = models.TextField(null=True)
-#     alarmExclude = models.TextField(null=True)
-#     alarmTimeTimestamp = models.TextField(null=True)
-#     batteryLevel = models.IntegerField(null=True)
-#     batteryLowNotification = models.TextField(null=True)
-#     configured = models.BooleanField()
-#     date = models.TextField(null=True)
-#     dead = models.BooleanField()
-#     deviceControlType = models.IntegerField()
-#     deviceIcon = models.IntegerField()
-#     disabled = models.IntegerField(null=True)
-#     emailNotificationID = models.IntegerField()
-#     emailNotificationType = models.IntegerField()
-#     endPoint = models.IntegerField(null=True)
-#     endPointId = models.IntegerField()
-#     fibaroAlarm = models.BooleanField(null=True)
-#     interval = models.IntegerField(null=True)
-#     homeIdHash = models.TextField(null=True)
-#     lastBreached = models.TextField(null=True)
-#     liliOffCommand = models.TextField(null=True)
-#     liliOnCommand = models.TextField(null=True)
-#     log = models.TextField()
-#     logTemp = models.TextField()
-#     manufacturer = models.TextField()
-#     markAsDead = models.BooleanField()
-#     model = models.TextField()
-#     nodeId = models.IntegerField()
-#     parameters = JSONField()
-#     parametersTemplate = models.IntegerField()
-#     pendingActions = models.BooleanField(null=True)
-#     pollingDeadDevice = models.BooleanField(null=True)
-#     pollingTime = models.IntegerField(null=True)
-#     pollingTimeNext = models.IntegerField(null=True)
-#     pollingTimeSec = models.IntegerField()
-#     productInfo = models.TextField()
-#     pushNotificationID = models.IntegerField()
-#     pushNotificationType = models.IntegerField(null=True)
-#     remoteGatewayId = models.IntegerField(null=True)
-#     requestNodeNeighborStatTimeStemp = models.TextField(null=True)
-#     requestNodeNeighborState = models.TextField(null=True)
-#     requestNodeNeighborStateTimeStemp = models.TextField(null=True)
-#     saveLogs = models.BooleanField()
-#     serialNumber = models.TextField()
-#     showChildren = models.TextField(null=True)
-#     smsNotificationID = models.IntegerField()
-#     smsNotificationType = models.IntegerField()
-#     status = models.TextField(null=True)
-#     sunriseHour = models.TextField(null=True)
-#     sunsetHour = models.TextField(null=True)
-#     useTemplate = models.BooleanField()
-#     userDescription = models.TextField()
-#     value = JSONField()
-#     wakeUpTime = models.IntegerField(null=True)
-#     zwaveBuildVersion = models.TextField(null=True)
-#     zwaveCompany = models.TextField()
-#     zwaveInfo = models.TextField()
-#     zwaveRegion = models.TextField(null=True)
-#     zwaveVersion = models.TextField()
