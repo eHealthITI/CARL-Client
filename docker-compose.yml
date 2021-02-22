@@ -1,0 +1,71 @@
+version: "3"
+   
+services:
+  db:
+    restart: unless-stopped
+    image: postgres
+    volumes: 
+      - .:/data
+    environment: 
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+    - "5433:5433"
+    networks: 
+      - backend
+  web:
+    restart: unless-stopped
+    build: .
+    command: bash -c "python manage.py migrate && python manage.py runserver"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    links:
+      - db:db
+    networks: 
+    - backend
+  celery:
+    build: .
+    command: bash -c "celery -A scheduler worker -l info"
+    depends_on: 
+      - db
+      - beat
+      - redis
+    links:
+      - db:db
+      - redis:redis
+      - beat:beat
+    networks: 
+      - async
+      - backend
+  beat:
+    build: .
+    env_file:
+      - ".env"
+    command: bash -c "celery -A scheduler beat -l info"
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+    links:
+      - redis:redis
+    networks: 
+      - async
+  redis:
+    image: redis:latest
+    command: redis-server
+    expose:
+      - "6379"
+    networks: 
+      - async
+  
+networks: 
+  async:
+    driver: bridge
+  backend:
+    driver: bridge
+  

@@ -1,0 +1,11 @@
+Django==3.1.4
+pydantic[dotenv]==1.7.3
+requests==2.25.1
+pytest==6.2.1
+celery
+coverage
+django-extensions
+psycopg2-binary
+django-discover-runner
+factory-boy
+redis

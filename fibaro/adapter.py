@@ -25,7 +25,7 @@ class HomeCenterAdapter:
             'Authorization': f"Basic {self.token}"
         }
 
-    def get(self, endpoint=None, method=None, parameters=None):
+    def get(self, endpoint='', method='Get', parameters=''):
         """
         Fetches data from the Home Center Lite API
         """

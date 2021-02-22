@@ -1,14 +1,17 @@
 import base64
 import json
 import logging
+import time
 from datetime import datetime
 
+import django
 from celery import Celery
 from django.core import serializers
+from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Max
 
 from fibaro.adapter import HomeCenterAdapter
-from fibaro.models import Section, Device, EventBase, Room
+import fibaro.models
 from fibaro.ypostirizo import Cloud
 from ypostirizoclient import settings
 
@@ -24,10 +27,13 @@ def get_sensor_data():
     home_center_adapter = HomeCenterAdapter()
 
     devices = home_center_adapter.get(endpoint='/api/devices', method='GET').json()
-    for d in devices:
-        device = Device()
-        device.read_json(d)
-        device.save()
+    for device in devices:
+        try:
+            sensor = fibaro.models.Device(device)
+            sensor.save()
+        except ObjectDoesNotExist:
+            logging.info('the roomId is : {}'.format(device.get('roomID')))
+            logging.info('the parentId is : {}'.format(device.get('parentId')))
 
 
 @app.task
@@ -39,16 +45,23 @@ def get_events():
     """
     home_center_adapter = HomeCenterAdapter()
     parameters = {}
-    event_max_time = EventBase.objects.all().aggregate(Max('timestamp')).get('timestamp__max')
-    parameters['from'] = event_max_time
+    event_max_time = fibaro.models.EventBase.objects.all().aggregate(Max('timestamp')).get('timestamp__max')
+    if event_max_time is None:
+        parameters['from'] = int(time.time())
+        logging.info(int(time.time()))
+    else:
+        parameters['from'] = event_max_time
 
-    new_events = home_center_adapter.get(endpoint='/api/panels/event',
-                                         parameters=parameters,
-                                         method='GET').json()
+    endpoint = '/api/panels/event'
 
+    response = home_center_adapter.get(endpoint=endpoint,
+                                       parameters=parameters,
+                                       method='GET')
+
+    new_events = response.json()
     for new in new_events:
-        event = EventBase()
         if new is not None:
+            event = fibaro.models.EventBase()
             event.read_json(new)
             event.save()
 
@@ -66,8 +79,8 @@ def get_sections():
                                            method='GET').json()
 
     for new in new_sections:
-        section = Section()
-        if new is not None and Section.objects.get(pk=new['id']) is None:
+        section = fibaro.models.Section()
+        if new is not None:
             section.read_json(new)
             section.save()
 
@@ -85,7 +98,7 @@ def get_rooms():
                                         method='GET').json()
 
     for new in new_rooms:
-        section = Section()
-        if new is not None and Room.objects.get(pk=new['id']) is None:
-            section.read_json(new)
-            section.save()
+        room = fibaro.models.Room()
+        if new is not None:
+            room.read_json(new)
+            room.save()

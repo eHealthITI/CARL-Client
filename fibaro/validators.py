@@ -1,84 +1,26 @@
 from typing import Union
 
 from pydantic import BaseModel
-from pydantic.types import List, Optional, OptionalInt
+from pydantic.types import List, Optional, OptionalInt, Dict, Json
 
 
-class EventBase(BaseModel):
+class Section(BaseModel):
     id: int
-    type: str
-    timestamp: int
-    deviceID: int
-    deviceType: str
-    propertyName: str
-    oldValue = int
-    newValue = int
+    name: str
+    sort_order: int
 
 
-class DeviceProperties(BaseModel):
-    UIMessageSendTime: OptionalInt
-    autoConfig: OptionalInt
-    armConfig: Optional[str]
-    alarmDelay: Optional[str]
-    armError: Optional[str]
-    armed: Optional[str]
-    alarmExclude: Optional[str]
-    alarmTimeTimestamp: Optional[str]
-    batteryLevel: Optional[int]
-    batteryLowNotification: Optional[str]
-    configured: bool
-    date: Optional[str]
-    dead: bool
-    deviceControlType: int
-    deviceIcon: int
-    disabled: OptionalInt
-    emailNotificationID: int
-    emailNotificationType: int
-    endPoint: Optional[int]
-    endPointId: int
-    fibaroAlarm: Optional[bool]
-    interval: Optional[int]
-    homeIdHash: Optional[str]
-    lastBreached: Optional[str]
-    liliOffCommand: Optional[str]
-    liliOnCommand: Optional[str]
-    log: str
-    logTemp: str
-    manufacturer: str
-    markAsDead: bool
-    model: str
-    nodeId: int
-    parameters: Optional[list]
-    parametersTemplate: int
-    pendingActions: Optional[bool]
-    pollingDeadDevice: Optional[bool]
-    pollingTime: OptionalInt
-    pollingTimeNext: OptionalInt
-    pollingTimeSec: int
-    productInfo: str
-    pushNotificationID: int
-    pushNotificationType: OptionalInt
-    remoteGatewayId: OptionalInt
-    requestNodeNeighborStatTimeStemp: Optional[str]
-    requestNodeNeighborState: Optional[str]
-    requestNodeNeighborStateTimeStemp: Optional[str]
-    saveLogs: bool
-    serialNumber: str
-    showChildren: Optional[str]
-    smsNotificationID: int
-    smsNotificationType: int
-    status: Optional[str]
-    sunriseHour: Optional[str]
-    sunsetHour: Optional[str]
-    useTemplate: bool
-    userDescription: str
-    value: Union[Optional[str], Optional[float], Optional[dict]]
-    wakeUpTime: Optional[int]
-    zwaveBuildVersion: Optional[str]
-    zwaveCompany: str
-    zwaveInfo: str
-    zwaveRegion: Optional[str]
-    zwaveVersion: str
+class Room(BaseModel):
+    id: int
+    name: str
+    sectionID: int
+    icon: str
+    default_sensors: dict
+    default_thermostat: int
+    created: int
+    modified: int
+    sort_order: int
+    category: str
 
 
 class Device(BaseModel):
@@ -95,8 +37,88 @@ class Device(BaseModel):
     viewXml: Optional[bool]
     configXml: Optional[bool]
     interfaces: List[str]
-    properties: DeviceProperties
+    properties: dict
     actions: dict
     created: int
     modified: int
     sortOrder: int
+
+
+class EventBase(BaseModel):
+    id: int
+    type: str
+    timestamp: int
+    deviceID: int
+    deviceType: str
+    propertyName: str
+    oldValue = int
+    newValue = int
+
+
+# class DeviceProperties(BaseModel):
+#     UIMessageSendTime: OptionalInt
+#     autoConfig: OptionalInt
+#     armConfig: Optional[str]
+#     alarmDelay: Optional[str]
+#     armError: Optional[str]
+#     armed: Optional[str]
+#     alarmExclude: Optional[str]
+#     alarmTimeTimestamp: Optional[str]
+#     batteryLevel: Optional[int]
+#     batteryLowNotification: Optional[str]
+#     configured: bool
+#     date: Optional[str]
+#     dead: bool
+#     deviceControlType: int
+#     deviceIcon: int
+#     disabled: OptionalInt
+#     emailNotificationID: int
+#     emailNotificationType: int
+#     endPoint: Optional[int]
+#     endPointId: int
+#     fibaroAlarm: Optional[bool]
+#     interval: Optional[int]
+#     homeIdHash: Optional[str]
+#     lastBreached: Optional[str]
+#     liliOffCommand: Optional[str]
+#     liliOnCommand: Optional[str]
+#     log: str
+#     logTemp: str
+#     manufacturer: str
+#     markAsDead: bool
+#     model: str
+#     nodeId: int
+#     parameters: Optional[list]
+#     parametersTemplate: int
+#     pendingActions: Optional[bool]
+#     pollingDeadDevice: Optional[bool]
+#     pollingTime: OptionalInt
+#     pollingTimeNext: OptionalInt
+#     pollingTimeSec: int
+#     productInfo: str
+#     pushNotificationID: int
+#     pushNotificationType: OptionalInt
+#     remoteGatewayId: OptionalInt
+#     requestNodeNeighborStatTimeStemp: Optional[str]
+#     requestNodeNeighborState: Optional[str]
+#     requestNodeNeighborStateTimeStemp: Optional[str]
+#     saveLogs: bool
+#     serialNumber: str
+#     showChildren: Optional[str]
+#     smsNotificationID: int
+#     smsNotificationType: int
+#     status: Optional[str]
+#     sunriseHour: Optional[str]
+#     sunsetHour: Optional[str]
+#     useTemplate: bool
+#     userDescription: str
+#     value: Union[Optional[str], Optional[float], Optional[dict]]
+#     wakeUpTime: Optional[int]
+#     zwaveBuildVersion: Optional[str]
+#     zwaveCompany: str
+#     zwaveInfo: str
+#     zwaveRegion: Optional[str]
+#     zwaveVersion: str
+
+
+
