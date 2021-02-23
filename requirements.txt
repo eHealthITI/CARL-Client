@@ -9,3 +9,4 @@ psycopg2-binary
 django-discover-runner
 factory-boy
 redis
+pyyaml

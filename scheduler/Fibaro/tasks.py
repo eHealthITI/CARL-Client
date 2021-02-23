@@ -29,8 +29,11 @@ def get_sensor_data():
     devices = home_center_adapter.get(endpoint='/api/devices', method='GET').json()
     for device in devices:
         try:
-            sensor = fibaro.models.Device(device)
+            sensor = fibaro.models.Device()
+            sensor.read_json(device)
             sensor.save()
+
+        # TODO Probably should remove this exception
         except ObjectDoesNotExist:
             logging.info('the roomId is : {}'.format(device.get('roomID')))
             logging.info('the parentId is : {}'.format(device.get('parentId')))

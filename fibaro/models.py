@@ -40,7 +40,7 @@ class Room(models.Model):
             self.sortOrder = rooms.get('sortOrder')
         except Section.DoesNotExist:
             logging.info("SectionID:{} --- Does NOT exist ".format(rooms.get('sectionID')))
-            fibaro.get_sections.delay()
+            fibaro.get_sections()
 
 
 class Device(models.Model):
@@ -66,7 +66,7 @@ class Device(models.Model):
     modified = models.IntegerField()
     sortOrder = models.IntegerField()
 
-    def __init__(self, device_dict):
+    def read_json(self, device_dict):
         try:
             self.id = device_dict.get('id')
             self.name = device_dict.get('name')
@@ -88,10 +88,10 @@ class Device(models.Model):
             self.properties = json.dumps(device_dict.get('properties'))
         except Room.DoesNotExist:
             logging.info("RoomID:{} --- Does NOT exist ".format(device_dict.get('roomID')))
-            fibaro.get_rooms.delay()
+            fibaro.get_rooms()
         except Device.DoesNotExist:
             logging.info("DeviceID:{} --- Does NOT exist ".format(device_dict.get('parentID')))
-            fibaro.get_sensor_data.delay()
+            fibaro.get_sensor_data()
 
 
 class EventBase(models.Model):

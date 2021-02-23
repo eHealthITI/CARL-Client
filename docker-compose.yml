@@ -17,7 +17,7 @@ services:
   web:
     restart: unless-stopped
     build: .
-    command: bash -c "python manage.py migrate && python manage.py runserver"
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py loaddata initial.yaml && python manage.py runserver"
     volumes:
       - .:/code
     ports:
