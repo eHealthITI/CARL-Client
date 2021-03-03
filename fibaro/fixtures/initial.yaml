@@ -1,0 +1,88 @@
+- model: fibaro.section
+  pk: 0
+  fields:
+    name: no section
+
+- model: fibaro.room
+  pk: 0
+  fields:
+    name: no room
+    sectionID: 0
+
+- model: fibaro.device
+  pk: 0
+  fields:
+    name: zwave-master
+    type: s
+    baseType: 0-dummy
+    enabled: false
+    visible: false
+    isPlugin: false
+    parentId: 0
+    remoteGatewayId: 0
+    viewXml: false
+    configXml: false
+    interfaces:
+    - zwave
+    properties:
+      UIMessageSendTime: '0'
+      autoConfig: '0'
+      configured: true
+      wakeUpTime: 0
+      date: a
+      dead: 'false'
+      deviceControlType: '0'
+      deviceIcon: '28'
+      disabled: '1'
+      emailNotificationID: '0'
+      emailNotificationType: '0'
+      endPoint: '0'
+      endPointId: '0'
+      homeIdHash: ''
+      log: ''
+      logTemp: ''
+      manufacturer: ''
+      markAsDead: 'true'
+      model: ''
+      nodeID: '1'
+      nodeId: '0'
+      parameters: []
+      parametersTemplate: '0'
+      pollingDeadDevice: 'false'
+      pollingTime: '1354829138'
+      pollingTimeNext: '1354837724'
+      pollingTimeSec: 125
+      productInfo: ''
+      pushNotificationID: '0'
+      pushNotificationType: '0'
+      remoteGatewayId: '0'
+      requestNodeNeighborStat: '0'
+      requestNodeNeighborStatTimeStemp: ''
+      requestNodeNeighborState: ''
+      requestNodeNeighborStateTimeStemp: ''
+      saveLogs: 'true'
+      serialNumber: ''
+      showChildren: '1'
+      smsNotificationID: '0'
+      smsNotificationType: '0'
+      status: STAT_IDLE
+      sunriseHour: '04:53'
+      sunsetHour: '21:05'
+      useTemplate: 'true'
+      userDescription: ''
+      value: '0'
+      zwaveBuildVersion: '3.67'
+      zwaveCompany: Unknown
+      zwaveInfo: ''
+      zwaveRegion: EU
+      zwaveVersion: '4.33'
+    actions:
+      pollingDeadDevice: 1
+      pollingTimeSec: 1
+      reconfigure: 0
+      requestNodeNeighborUpdate: 1
+      turnOff: 0
+      turnOn: 0
+    created: 1
+    modified: 8
+    sortOrder: 1
