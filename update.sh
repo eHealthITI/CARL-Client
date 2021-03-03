@@ -15,4 +15,11 @@ curl --header "Authorization: Token $cloud_token" -H "Content-Type: application/
 
 
 chown 1000:1000 latest.zip
-unzip latest.zip
+folder=$(unzip -l latest.zip |awk  'NR==5 {print $4}'|tr -d '\015')
+echo $folder
+
+unzip -q -o latest.zip "$folder*" 
+
+yes | cp -r $folder*.* .
+
+docker-compose up -d --build

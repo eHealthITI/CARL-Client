@@ -24,6 +24,9 @@ sed -i '/^HC_URL/d' /home/pi/ypostirizoclient/.env
 #Appends HC_URL key and its value
 echo 'HC_URL='$fibaro_ip >> /home/pi/ypostirizoclient/.env
 
+cronrab -r 
+crontab -l | { cat; echo "* 6 * * 5 update.sh"; } | crontab -
+
 echo "filled .env file"
 
 docker-compose -f /home/pi/ypostirizoclient/docker-compose.yml up --build
