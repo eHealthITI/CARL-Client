@@ -1,19 +1,19 @@
 - model: fibaro.section
   pk: 0
   fields:
-    name: dummy
+    name: no section
 
 - model: fibaro.room
   pk: 0
   fields:
-    name: dummy
+    name: no room
     sectionID: 0
 
 - model: fibaro.device
   pk: 0
   fields:
     name: zwave-master
-    type: com.fibaro.zwavePrimaryController
+    type: s
     baseType: 0-dummy
     enabled: false
     visible: false
@@ -28,6 +28,7 @@
       UIMessageSendTime: '0'
       autoConfig: '0'
       configured: true
+      wakeUpTime: 0
       date: a
       dead: 'false'
       deviceControlType: '0'

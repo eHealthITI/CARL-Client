@@ -105,6 +105,7 @@ class EventBase(models.Model):
     newValue = models.FloatField(null=True)
     icon = models.TextField(null=True)
     event = JSONField(null=True)
+    synced = models.BooleanField(default=False)
 
     def read_json(self, event_dict):
 
@@ -115,7 +116,9 @@ class EventBase(models.Model):
             self.deviceID = Device.objects.get(pk=event_dict.get('deviceID'))
             self.deviceType = event_dict.get('deviceType')
             self.property_name = event_dict.get('propertyName')
-            self.value = event_dict.get('newValue')
+            self.newValue = event_dict.get('newValue')
+            self.oldValue = event_dict.get('oldValue')
+            self.synced = False
         except models.ObjectDoesNotExist:
             logging.info("Device ID:{}".format(event_dict.get('deviceID')))
             fibaro.get_sensor_data()

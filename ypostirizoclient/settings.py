@@ -84,8 +84,8 @@ HC_USER = cnf.HC_USER
 CLOUD_URL = cnf.CLOUD_URL
 # CLOUD_USER = cnf.CLOUD_USER
 DEBUG = cnf.DEBUG
-IGNORED_DEVICES = ["HC_user", "com.fibaro.yrWeather", "com.fibaro.zwavePrimaryController",
-                   "com.fibaro.niceEngine", "com.fibaro.zwaveDevice","master"]
+IGNORED_DEVICES = ["HC_user","s", "com.fibaro.yrWeather", "com.fibaro.zwavePrimaryController",
+                   "com.fibaro.niceEngine","master"]
 HC_API_EVENT_INTERVAL = cnf.HC_INTERVAL
 CLOUD_DEVICES_INTERVAL = cnf.CLOUD_DEVICES_INTERVAL
 CLOUD_EVENTS_INTERVAL = cnf.CLOUD_EVENTS_INTERVAL
@@ -96,6 +96,7 @@ TYPE_OF_CHOICES = {
                    'com.fibaro.doorWindowSensor': 3,
                    'com.fibaro.lifeDangerSensor': 3,
                    'com.fibaro.floodSensor': 4,
-                   'com.fibaro.remoteSceneController': 5
+                   'com.fibaro.remoteSceneController': 5,
+                   'com.fibaro.device':6
                    }
 

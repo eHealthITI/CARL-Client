@@ -50,8 +50,7 @@ def get_events():
     parameters = {}
     event_max_time = fibaro.models.EventBase.objects.all().aggregate(Max('timestamp')).get('timestamp__max')
     if event_max_time is None:
-        parameters['from'] = int(time.time())
-        logging.info(int(time.time()))
+        parameters['from'] = 0
     else:
         parameters['from'] = event_max_time
 
