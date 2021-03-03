@@ -21,3 +21,5 @@ echo $folder
 unzip -q -o latest.zip "$folder*" 
 
 yes | cp -r $folder*.* .
+
+docker-compose up -d --build
