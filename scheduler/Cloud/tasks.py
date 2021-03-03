@@ -95,11 +95,16 @@ def upload_events():
                         'old_value': ev.oldValue,
                         'new_value':ev.newValue}
                 event_list.append(event)
-                ev.synced=True
-                ev.save()
-        logging.info(len(event_list))
+                
+
         response = cloud.send(endpoint='/api/device/events/new_event/',
                               payload=event_list)
+        if response==200:
+            for ev in event_list:
+                e = fibaro.models.EventBase.objects.get(pk=ev.id)
+                e.synced=True
+                e.save()
+                
         logging.info(
             "UPLOAD EVENTS: Response from Cloud : {}".format(response))
 
