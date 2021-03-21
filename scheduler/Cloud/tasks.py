@@ -87,14 +87,16 @@ def upload_events():
         synced=False).order_by('pk')
     event_list = []
     if latest_events:
-        for ev in latest_events:
-            logging.info(ev.deviceID_id)
-            if fibaro.models.Device.objects.get(pk=ev.deviceID_id).type not in settings.IGNORED_DEVICES:
-                event = {'device': ev.deviceID_id, 'timestamp': ev.timestamp,
-                        'id': ev.pk, 'type': ev.type,
-                        'old_value': ev.oldValue,
-                        'new_value':ev.newValue}
-                event_list.append(event)
+        # Split the event list to chunks of 1000 length
+        latest_events = [latest_events[x:x+1000] for x in range(0, len(latest_events), 1000)]
+        for chunk in latest_events:
+            for ev in chunk:
+                if fibaro.models.Device.objects.get(pk=ev.deviceID_id).type not in settings.IGNORED_DEVICES:
+                    event = {'device': ev.deviceID_id, 'timestamp': ev.timestamp,
+                            'id': ev.pk, 'type': ev.type,
+                            'old_value': ev.oldValue,
+                            'new_value':ev.newValue}
+                    event_list.append(event)
                 
 
         response = cloud.send(endpoint='/api/device/events/new_event/',
