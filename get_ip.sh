@@ -17,7 +17,7 @@ router_ip=$(ip r | awk 'END {print $1}')
 echo "found the IP of the router. ($router_ip)"
 #Finds the ip of the homecenter lite
 fibaro_ip=$(nmap -sP $router_ip | awk '/^Nmap/{ip=$5}/Fibar/{print ip}')
-echo("found the ip of HC lite. ($fibaro_ip)")
+echo"found the ip of HC lite. ($fibaro_ip)"
 #Delete the last line the value to .env file
 sed -i '/^HC_URL/d' /home/pi/ypostirizoclient/.env
 
