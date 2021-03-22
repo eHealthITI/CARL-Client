@@ -1,0 +1,16 @@
+[
+  {
+    "id": 9999,
+    "name": "test_room",
+    "sectionID": 9999,
+    "icon": "room_baczek",
+    "defaultSensors": {
+      "temperature": 99,
+      "humidity": 99,
+      "light": 99
+    },
+    "defaultThermostat": 0,
+    "sortOrder": 1,
+    "category": "other"
+  }
+]
