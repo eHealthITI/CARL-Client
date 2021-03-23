@@ -6,16 +6,47 @@ from scheduler.Fibaro import tasks as fibaro
 
 
 class Section(models.Model):
+    """
+        This model is used to represent the section data that are fetched from the HCL API.
+
+    Args:
+        id: Integer This is the same as the section's id on the HCL 
+        name: Text e.g. First Floor
+        sortOrder: Integer
+    """
     id = models.IntegerField(primary_key=True)
     name = models.TextField()
     sortOrder = models.IntegerField(null=True)
 
+
+
+    """
+        Acts as a serializer and maps the data fetched from HCL's API to the variables 
+        of a Section instance.
+        
+        Args:
+            section_dict: dictionary of a single Section element returned from HCL's API
+    """
     def read_json(self, section_dict):
             self.id = section_dict.get('id')
             self.name = section_dict.get('name')
             self.sortOrder = section_dict.get('sortOrder')
 
 class Room(models.Model):
+    """
+        This model is used to represent the room data that are fetched from the HCL API.
+
+    Args:
+        id: Integer This is the same as the room's id on the HCL
+        name: Test e.g Living Room
+        SectionID: Foreign key for Section where the room belongs to
+        defaultSensors: List of dictionaries with sensor data
+        defaultThermostat: Integer representing which element in defaultSensors concerns the defaultThermostat
+        created: Integer representing the creation datetime in unix epoch e.g. 12314654    
+        modified: Integer representing the datetime of last modification in unix epoch e.g. 12314654    
+        sortOrder: Integer
+
+    """
     id = models.IntegerField(primary_key=True)
     name = models.TextField()
     sectionID = models.ForeignKey(Section, on_delete=models.CASCADE)
@@ -27,19 +58,28 @@ class Room(models.Model):
     modified = models.IntegerField(null=True)
     sortOrder = models.IntegerField(null=True)
 
-    def read_json(self, rooms):
+    def read_json(self, room_dict):
+        """
+        Acts as a serializer and maps the data fetched from HCL's API to the variables 
+        of a Section instance.
+        
+
+        Args:
+            rooms (undefined):
+                section_dict: dictionary of a single Section element returned from HCL's API
+        """
         try:
-            self.id = rooms.get('id')
-            self.name = rooms.get('name')
-            self.sectionID = Section.objects.get(pk=rooms.get('sectionID'))
-            self.icon = rooms.get('icon')
-            self.defaultSensors = rooms.get('defaultSensors')
-            self.defaultThermostat = rooms.get('defaultThermostat')
-            self.created = rooms.get('created')
-            self.modified = rooms.get('modified')
-            self.sortOrder = rooms.get('sortOrder')
+            self.id = room_dict.get('id')
+            self.name = room_dict.get('name')
+            self.sectionID = Section.objects.get(pk=room_dict.get('sectionID'))
+            self.icon = room_dict.get('icon')
+            self.defaultSensors = room_dict.get('defaultSensors')
+            self.defaultThermostat = room_dict.get('defaultThermostat')
+            self.created = room_dict.get('created')
+            self.modified = room_dict.get('modified')
+            self.sortOrder = room_dict.get('sortOrder')
         except Section.DoesNotExist:
-            logging.info("SectionID:{} --- Does NOT exist ".format(rooms.get('sectionID')))
+            logging.info("SectionID:{} --- Does NOT exist ".format(room_dict.get('sectionID')))
             fibaro.get_sections()
 
 
