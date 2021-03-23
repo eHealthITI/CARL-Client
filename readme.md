@@ -1,7 +1,9 @@
 # CARL RPi Client
 Client application consuming data from local FIBARO Smart Home Home Center Lite (HCL) and devices/sensors and proxies them to the main CARL Server application.
 
-<img src="" width="150" height="15%">
+# Tech Stack
+
+![techstack](https://github.com/eHealthITI/ypostirizoclient/blob/master_test/img/tech_stack.png)
 
 
 ## Installation:
@@ -48,6 +50,7 @@ This is achieved with 2 bash scripts:
     This is configured on `get_ip.sh` to run on a daily basis. 
 
 ## Apps:
+![workflow](https://github.com/eHealthITI/ypostirizoclient/blob/master_test/img/workflow.png)
 ### Fibaro: 
 
 Fibaro is responsible to get the data from HCL's API and store it on a local DB (`db_service`).
