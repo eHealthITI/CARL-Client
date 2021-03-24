@@ -22,7 +22,7 @@ echo $folder
 #unzips its contents
 unzip -q -o latest.zip "$folder*" 
 
-yes | cp -r $folder*.* .
+yes | cp -R $folder .
 
 # rebuild the service with the new source code
 docker-compose up -d --build
