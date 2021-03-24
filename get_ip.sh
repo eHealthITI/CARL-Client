@@ -1,6 +1,6 @@
 #!/bin/bash
 
-exec > /home/pi/ypostirizoclient/logfile.txt
+exec > /home/pi/carlpi/logfile.txt
 exec 2>&1
 
 # Makes sure that nmap is installed
@@ -12,6 +12,8 @@ apt --assume-yes install libffi-dev libssl-dev
 apt --assume-yes install python3 python3-pip
 apt --assume-yes remove python-configparser
 sudo pip3 -v install docker-compose
+
+
 echo "installed docker"
 #Finds the IP getaway of the router.
 router_ip=$(ip r | awk 'END {print $1}')
