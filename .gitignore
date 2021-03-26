@@ -6,8 +6,6 @@ db.sqlite3
 test_db.sqlite3
 .env
 .coverage
-ypostirizoclient.config.py
-ypostirizoclient.settings.py
 .idea/.gitignore
 .idea/dataSources.xml
 .idea/misc.xml
