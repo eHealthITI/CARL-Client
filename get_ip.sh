@@ -29,7 +29,7 @@ echo 'HC_URL='$fibaro_ip >> /home/pi/carlpi/.env
 
 
 # Creates a crontab job to run update.sh script on a daily basis at 7:00AM
-cronrab -r 
+crontab -r 
 crontab -l | { cat; echo "0 7 * * * /home/pi/carlpi/update.sh"; } | crontab -
 
 echo "filled .env file"
