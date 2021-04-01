@@ -25,7 +25,7 @@ echo"found the ip of HC lite. ($fibaro_ip)"
 sed -i '/^HC_URL/d' /home/pi/carlpi/.env
 
 #Appends HC_URL key and its value to the .env file
-echo 'HC_URL='$fibaro_ip >> /home/pi/carlpi/.env
+echo 'HC_URL=http://'$fibaro_ip >> /home/pi/carlpi/.env
 
 
 # Creates a crontab job to run update.sh script on a daily basis at 7:00AM
