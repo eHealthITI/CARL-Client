@@ -4,6 +4,13 @@ from pydantic import BaseModel
 from pydantic.types import List, Optional, OptionalInt, Dict, Json
 
 
+
+
+# IMPORTANT NOTE
+
+# these are not currently used anywhere in the code. 
+# keeping them in case of a major refactoring. 
+
 class Section(BaseModel):
     id: int
     name: str

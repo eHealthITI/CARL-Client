@@ -11,7 +11,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ypostirizoclient.settings')
 app = Celery('scheduler',
              broker='redis://redis:6379',
              include=['scheduler.Cloud.tasks',
-                      #'scheduler.Fibaro.tasks'
+                      'scheduler.Fibaro.tasks'
                     ])
 
 app.config_from_object('scheduler.celeryconfig')
@@ -43,11 +43,11 @@ app.conf.beat_schedule = {
     },
     'push-new-devices': {
         'task': 'scheduler.Cloud.tasks.update_devices',
-        'schedule': 10  # seconds
+        'schedule': 60  # seconds
     },
     'push-latest-events': {
         'task': 'scheduler.Cloud.tasks.upload_events',
-        'schedule': 10 # seconds
+        'schedule': 60 # seconds
     }
 
 }

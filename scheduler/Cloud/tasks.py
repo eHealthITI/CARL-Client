@@ -104,7 +104,7 @@ def upload_events():
                               payload=event_list)
         if response==200:
             for ev in event_list:
-                e = fibaro.models.EventBase.objects.get(pk=ev.id)
+                e = fibaro.models.EventBase.objects.get(pk=ev['id'])
                 e.synced=True
                 e.save()
      

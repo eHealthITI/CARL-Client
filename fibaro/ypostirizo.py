@@ -19,7 +19,7 @@ class Cloud:
     def send(self, endpoint='',
              payload='{}'):
         """
-        Sends list of EventBase objects to the cloud in json
+        Sends Event, Device, Room, Section objects to the cloud in json
         format.
         """
         final_url = self.url + endpoint

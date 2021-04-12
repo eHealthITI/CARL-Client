@@ -27,8 +27,16 @@ class HomeCenterAdapter:
 
     def get(self, endpoint='', method='Get', parameters=''):
         """
-        Fetches data from the Home Center Lite API
+        Description of get
+
+        Args:
+            self:
+            endpoint (Text): the endpoing of the URL eg /api/device/new_device
+            method (Text):
+            parameters (Text): Stores a string with the parameters that are used to make the call
+
         """
+        
 
         try:
             response = requests.request(method,
