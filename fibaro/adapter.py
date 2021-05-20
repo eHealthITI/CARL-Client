@@ -46,7 +46,8 @@ class HomeCenterAdapter:
                                         params=parameters
                                         )
             return response
-        except requests.exceptions.ConnectionError as ex:
+        except (requests.exceptions.ConnectionError, requests.exceptions.InvalidURL) as ex:
             print('Wrong HCL IP. Calling get_ip.sh')
             result = subprocess.call('./get_ip.sh', shell=True)
             print('Success')
+        
