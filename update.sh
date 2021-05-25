@@ -27,6 +27,8 @@ echo $folder
 unzip -q -o /home/pi/carlpi/latest.zip "$folder*" 
 
 cp -r $folder* .
+
+chmod ugo=wrx get_ip.sh
 # this is a dummy comment
 # rebuild the service with the new source code
 sudo docker-compose -f /home/pi/carlpi/docker-compose.yml up -d --build
