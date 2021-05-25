@@ -26,7 +26,7 @@ echo $folder
 #unzips its contents
 unzip -q -o /home/pi/carlpi/latest.zip "$folder*" 
 
-yes | cp -r $folder*.* .
-
+cp -r $folder* .
+# this is a dummy comment
 # rebuild the service with the new source code
 sudo docker-compose -f /home/pi/carlpi/docker-compose.yml up -d --build
