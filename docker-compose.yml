@@ -29,6 +29,7 @@ services:
     networks: 
     - backend
   celery:
+    restart: unless-stopped
     build: .
     command: bash -c "celery -A scheduler worker -l info"
     depends_on: 
@@ -43,6 +44,7 @@ services:
       - async
       - backend
   beat:
+    restart: unless-stopped
     build: .
     env_file:
       - ".env"
@@ -56,6 +58,7 @@ services:
     networks: 
       - async
   redis:
+    restart: unless-stopped
     image: redis:latest
     command: redis-server
     expose:
