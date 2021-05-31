@@ -3,6 +3,7 @@ import requests
 from django.conf import settings
 from requests import HTTPError
 import base64
+import subprocess
 
 
 class HomeCenterAdapter:
@@ -45,5 +46,6 @@ class HomeCenterAdapter:
                                         params=parameters
                                         )
             return response
-        except HTTPError as ex:
-            logging.warning(ex)
+        except (requests.exceptions.ConnectionError, requests.exceptions.InvalidURL) as ex:
+            print('Wrong HCL IP')
+        

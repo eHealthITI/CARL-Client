@@ -26,17 +26,18 @@ def get_sensor_data():
     """
     home_center_adapter = HomeCenterAdapter()
 
-    devices = home_center_adapter.get(endpoint='/api/devices', method='GET').json()
-    for device in devices:
-        try:
-            sensor = fibaro.models.Device()
-            sensor.read_json(device)
-            sensor.save()
+    devices = home_center_adapter.get(endpoint='/api/devices', method='GET')
+    if devices is not None:    
+        for device in devices.json():
+            try:
+                sensor = fibaro.models.Device()
+                sensor.read_json(device)
+                sensor.save()
 
-        # TODO Probably should remove this exception
-        except ObjectDoesNotExist:
-            logging.info('the roomId is : {}'.format(device.get('roomID')))
-            logging.info('the parentId is : {}'.format(device.get('parentId')))
+            # TODO Probably should remove this exception
+            except ObjectDoesNotExist:
+                logging.info('the roomId is : {}'.format(device.get('roomID')))
+                logging.info('the parentId is : {}'.format(device.get('parentId')))
 
 
 @app.task
@@ -56,16 +57,16 @@ def get_events():
 
     endpoint = '/api/panels/event'
 
-    response = home_center_adapter.get(endpoint=endpoint,
+    new_events = home_center_adapter.get(endpoint=endpoint,
                                        parameters=parameters,
                                        method='GET')
 
-    new_events = response.json()
-    for new in new_events:
-        if new is not None:
-            event = fibaro.models.EventBase()
-            event.read_json(new)
-            event.save()
+    if new_events is not None:
+        for new in new_events.json():
+            if new is not None:
+                event = fibaro.models.EventBase()
+                event.read_json(new)
+                event.save()
 
 
 @app.task
@@ -78,13 +79,13 @@ def get_sections():
     home_center_adapter = HomeCenterAdapter()
 
     new_sections = home_center_adapter.get(endpoint='/api/sections',
-                                           method='GET').json()
-
-    for new in new_sections:
-        section = fibaro.models.Section()
-        if new is not None:
-            section.read_json(new)
-            section.save()
+                                           method='GET')
+    if new_sections is  not None:
+        for new in new_sections.json():
+            section = fibaro.models.Section()
+            if new is not None:
+                section.read_json(new)
+                section.save()
 
 
 @app.task
@@ -97,10 +98,10 @@ def get_rooms():
     home_center_adapter = HomeCenterAdapter()
 
     new_rooms = home_center_adapter.get(endpoint='/api/rooms',
-                                        method='GET').json()
-
-    for new in new_rooms:
-        room = fibaro.models.Room()
-        if new is not None:
-            room.read_json(new)
-            room.save()
+                                        method='GET')
+    if new_rooms is not None:
+        for new in new_rooms.json():
+            room = fibaro.models.Room()
+            if new is not None:
+                room.read_json(new)
+                room.save()
