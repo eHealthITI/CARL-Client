@@ -36,5 +36,3 @@ crontab -l | { cat; echo "0 7 * * * /home/pi/carlpi/update.sh"; } | crontab -
 echo "filled .env file"
 
 docker-compose -f /home/pi/carlpi/docker-compose.yml up -d --build
-
-sh restart.sh
