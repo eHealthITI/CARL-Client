@@ -1,6 +1,6 @@
 #!/bin/bash
 
-exec > logfile.txt
+exec > /home/pi/carlpi/logfile.txt
 exec 2>&1
 
 # Makes sure that nmap is installed
