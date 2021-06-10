@@ -1,7 +1,8 @@
 #!/bin/bash
 
-exec > /home/pi/carlpi/logfile.txt
-exec 2>&1
+exec 3>&1 4>&2
+trap 'exec 2>&4 1>&3' 0 1 2 3
+exec 1>/home/pi/carlpi/deploy_log.txt 2>&1
 
 # Makes sure that nmap is installed
 apt --assume-yes install nmap
@@ -13,7 +14,8 @@ apt --assume-yes install python3 python3-pip
 apt --assume-yes remove python-configparser
 sudo pip3 -v install docker-compose
 # Installs notify-tools
-apt --assume-yes install inotify-tools
+sudo pip3 -v install python-dotenv
+
 
 echo "installed docker"
 #Finds the IP getaway of the router.
@@ -27,12 +29,15 @@ sed -i '/^HC_URL/d' /home/pi/carlpi/.env
 
 #Appends HC_URL key and its value to the .env file
 echo 'HC_URL=http://'$fibaro_ip >> /home/pi/carlpi/.env
-
+echo "filled .env file"
 
 # Creates a crontab job to run update.sh script on a daily basis at 7:00AM
 crontab -r 
-crontab -l | { cat; echo "0 7 * * * /home/pi/carlpi/update.sh"; } | crontab -
-
-echo "filled .env file"
+crontab -l -u pi | { cat; echo "0 7 * * * /usr/bin/python3 /home/pi/carlpi/custom_update.py.py"; } | crontab -u pi -
+crontab -l -u pi | { cat; echo "@reboot /home/pi/carlpi/get_ip.sh"; } | crontab -u pi -
+echo "set up finished"
 
 docker-compose -f /home/pi/carlpi/docker-compose.yml up -d --build
+echo "built!"
+
+#lok'tar ogar for the horde
