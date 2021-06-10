@@ -32,8 +32,8 @@ download_link = cloud_url + 'download/carl/client'
 try:
 	r = requests.get(download_link, headers={"Authorization":f"Token {cloud_token}"})
 except Exception as e :
-	logging.warning('error while downloading the zip')
-	logging.warning(e)
+	print('error while downloading the zip')
+
 
 
 # In[43]:
@@ -44,15 +44,14 @@ try :
 	with open("latest.zip", "wb") as code:
     		code.write(r.content)
 except Exception as e:
-	logging.warning('error while saving the zip')
-	logging.warning(e)
+	print('error while saving the zip')
 
 
 # In[65]:
 
 
 # unzips it
-directory_to_extract_to = '/home/volpym/Desktop/tst'
+directory_to_extract_to = '/home/pi/carlpi/'
 filename = ''
 with zipfile.ZipFile('latest.zip', 'r') as zip_ref:
     zip_ref.extractall(directory_to_extract_to)
