@@ -60,7 +60,7 @@ with zipfile.ZipFile('latest.zip', 'r') as zip_ref:
 # In[ ]:
 
 
-#os.system("sudo shutdown -r now")
+os.system("sudo shutdown -r now")
 
 
 # In[ ]:
