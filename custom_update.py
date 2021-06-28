@@ -32,7 +32,7 @@ download_link = cloud_url + 'download/carl/client'
 try:
 	r = requests.get(download_link, headers={"Authorization":f"Token {cloud_token}"})
 except Exception as e :
-	print('error while downloading the zip')
+	print(e)
 
 
 
@@ -41,10 +41,10 @@ except Exception as e :
 
 # Saves the zip file
 try :
-	with open("latest.zip", "wb") as code:
+	with open("/home/pi/carlpi/latest.zip", "wb") as code:
     		code.write(r.content)
 except Exception as e:
-	print('error while saving the zip')
+	print(e)
 
 
 # In[65]:
@@ -53,7 +53,7 @@ except Exception as e:
 # unzips it
 directory_to_extract_to = '/home/pi/carlpi/'
 filename = ''
-with zipfile.ZipFile('latest.zip', 'r') as zip_ref:
+with zipfile.ZipFile('/home/pi/carlpi/latest.zip', 'r') as zip_ref:
     zip_ref.extractall(directory_to_extract_to)
 
 
@@ -61,6 +61,7 @@ with zipfile.ZipFile('latest.zip', 'r') as zip_ref:
 
 
 os.system("sudo shutdown -r now")
+os.system("chmod +x custom_update.py get_ip.sh")
 
 
 # In[ ]:
