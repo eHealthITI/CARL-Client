@@ -246,3 +246,10 @@ class EventBase(models.Model):
         except models.ObjectDoesNotExist:
             logging.info("Device ID:{}".format(event_dict.get('deviceID')))
             fibaro.get_sensor_data()
+
+
+class Consumption(models.Model):
+    timestamp = models.BigIntegerField()
+    watt = models.FloatField()
+    device = models.ForeignKey(Device,on_delete=models.DO_NOTHING)
+    synced = models.BooleanField(default=False)
