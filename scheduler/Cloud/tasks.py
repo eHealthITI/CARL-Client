@@ -42,7 +42,7 @@ def update_devices():
                     "parentId": dev.parentId_id,
                     "type_of":  settings.TYPE_OF_CHOICES[dev.baseType],
                     "enabled": dev.enabled,
-                    "wake_up_time": props['wakeUpTime'],
+                    #"wake_up_time": props['wakeUpTime'],
                     "categories": props['categories'],
                     "configured": props['configured'],
                     "dead": props['dead'],
@@ -53,12 +53,24 @@ def update_devices():
                     "serial": "fibaro00{}".format(str(dev.id)),
                     "make": "Fibaro",
                     "last_sync_time": str(datetime.now(pytz.utc)),
-                    "battery": props['batteryLevel']
+                    #"battery": props['batteryLevel']
                 }
 
                 if fibaro.models.Device.objects.get(pk=dev.parentId_id).type in settings.IGNORED_DEVICES or device['parentId']==1:
                     del device['parentId']
-                
+                try :
+                    if 'wakeUpTime' in props.keys() and 'batteryLevel' in props.keys():
+                        device['wake_up_time'] = props['wakeUpTime']
+                        device['battery'] = props['batteryLevel']
+                    else:
+                        print(device)
+                        device['wake_up_time'] = 0
+                        device['battery'] = 0
+                except KeyError as e:
+                    print(e)
+                    print('\n')
+                    print(dev)
+                    
                 device_list.append(device)
 
             except TypeError as e:
@@ -104,12 +116,15 @@ def upload_events():
                               payload=event_list)
         if response==200:
             for ev in event_list:
-                e = fibaro.models.EventBase.objects.get(pk=ev['id'])
-                e.synced=True
-                e.save()
-     
-        logging.info(
-            "UPLOAD EVENTS: Response from Cloud : {}".format(response))
+                try:
+                    e = fibaro.models.EventBase.objects.get(pk=ev['id'])
+                    e.synced=True
+                    e.save()
+                except Exception as e:
+                    print(e)
+                else:            
+                    logging.info(
+                        "UPLOAD EVENTS: Response from Cloud : {}".format(response))
 
 
 @app.task
@@ -154,6 +169,22 @@ def upload_rooms():
         logging.info("UPLOAD ROOM: Response from Cloud : {}".format(response))
 
 
+def upload_consumption():
+    cloud = Cloud()
+    latest_consumptions = fibaro.models.Consumption.objects.filter(synced=False).order_by('pk')
+    data = []
+    if latest_consumptions:
+        latest_consumptions = [latest_consumptions[x:x+1000] for x in range(0, len(latest_consumptions), 1000)]       
+        for chunk in latest_consumptions:
+            consumption_list = []
+            for consumption in chunk:
+                cons = {'device': consumption.device.id, 'timestamp': consumption.timestamp,
+                            'watt': consumption.watt}
+                data.append(cons)
+
+            response = cloud.send(endpoint='/api/device/fibaro-consumption/',
+                                  payload=data)
+            print(response)
 
 @app.task
 def download_update():
@@ -167,3 +198,6 @@ def download_update():
         for chunk in r.iter_content(chunk_size=1024): 
             if chunk: # filter out keep-alive new chunks
                 f.write(chunk)
+                
+
+
