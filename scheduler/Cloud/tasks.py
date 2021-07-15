@@ -168,7 +168,7 @@ def upload_rooms():
                               payload=room_list)
         logging.info("UPLOAD ROOM: Response from Cloud : {}".format(response))
 
-
+@app.task
 def upload_consumption():
     cloud = Cloud()
     latest_consumptions = fibaro.models.Consumption.objects.filter(synced=False).order_by('pk')
