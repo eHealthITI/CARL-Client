@@ -106,7 +106,7 @@ def get_rooms():
                 room.read_json(new)
                 room.save()
                 
-
+@app.task
 def get_consumption():
     
     devices = fibaro.models.Device.objects.filter(type='com.fibaro.FGWP102')
@@ -133,5 +133,3 @@ def get_consumption():
                     'device': device}
             print(kwargs)
             fibaro.models.Consumption.objects.create(**kwargs)
-            
-    
