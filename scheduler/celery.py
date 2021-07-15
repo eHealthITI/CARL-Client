@@ -33,6 +33,10 @@ app.conf.beat_schedule = {
         'task': 'scheduler.Fibaro.tasks.get_sensor_data',
         'schedule': 10
     },
+    'get-consumption-data': {
+        'task': 'scheduler.Fibaro.tasks.get_consumption',
+        'schedule': 10
+    },
     'push-new-sections': {
         'task': 'scheduler.Cloud.tasks.upload_sections',
         'schedule': 60  # seconds
@@ -47,6 +51,10 @@ app.conf.beat_schedule = {
     },
     'push-latest-events': {
         'task': 'scheduler.Cloud.tasks.upload_events',
+        'schedule': 60 # seconds
+    },
+    'push-latest-consumptions': {
+        'task': 'scheduler.Cloud.tasks.upload_consumption',
         'schedule': 60 # seconds
     }
 
