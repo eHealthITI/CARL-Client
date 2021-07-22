@@ -127,9 +127,9 @@ def get_consumption():
         cons_json = consumption_metrics.content.decode('utf8').replace("'", '"')
         data_json = json.loads(cons_json)
         for consumption in data_json:
-            print(consumption)
             kwargs = {'timestamp':consumption[0],
                     'watt':consumption[1],
                     'device': device}
-            print(kwargs)
-            fibaro.models.Consumption.objects.create(**kwargs)
+            
+            fibaro.models.Consumption.objects.get_or_create(**kwargs)    
+        
