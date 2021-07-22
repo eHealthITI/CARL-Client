@@ -93,6 +93,7 @@ TYPE_OF_CHOICES = {
                    'com.fibaro.lifeDangerSensor': 3,
                    'com.fibaro.floodSensor': 4,
                    'com.fibaro.remoteSceneController': 5,
-                   'com.fibaro.device':6
+                   'com.fibaro.device':6,
+                   'com.fibaro.FGWP': 7
                    }
 
