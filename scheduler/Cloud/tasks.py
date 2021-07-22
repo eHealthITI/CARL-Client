@@ -35,7 +35,7 @@ def update_devices():
                     props = json.loads(dev.properties)
 
                 device = {
-                    "pk": dev.id,
+                    "hcl_id": dev.id,
                     "model": dev.type,
                     "name": dev.name,
                     "room": dev.roomID_id,
@@ -50,7 +50,7 @@ def update_devices():
                     "created": dev.created,
                     "modified": dev.modified,
                     # The serial number is the string fibaro00 concatenated with the id of the device.
-                    "serial": "fibaro00{}".format(str(dev.id)),
+                    #"serial": f"fibaro00{}".format(str(dev.id)),
                     "make": "Fibaro",
                     "last_sync_time": str(datetime.now(pytz.utc)),
                     #"battery": props['batteryLevel']
@@ -63,7 +63,6 @@ def update_devices():
                         device['wake_up_time'] = props['wakeUpTime']
                         device['battery'] = props['batteryLevel']
                     else:
-                        print(device)
                         device['wake_up_time'] = 0
                         device['battery'] = 0
                 except KeyError as e:
@@ -106,7 +105,7 @@ def upload_events():
             for ev in chunk:
                 if fibaro.models.Device.objects.get(pk=ev.deviceID_id).type not in settings.IGNORED_DEVICES:
                     event = {'device': ev.deviceID_id, 'timestamp': ev.timestamp,
-                            'id': ev.pk, 'type': ev.type,
+                            'hcl_id': ev.pk, 'type': ev.type,
                             'old_value': ev.oldValue,
                             'new_value':ev.newValue}
                     event_list.append(event)
@@ -117,7 +116,7 @@ def upload_events():
         if response==200:
             for ev in event_list:
                 try:
-                    e = fibaro.models.EventBase.objects.get(pk=ev['id'])
+                    e = fibaro.models.EventBase.objects.get(pk=ev['hcl_id'])
                     e.synced=True
                     e.save()
                 except Exception as e:
@@ -139,7 +138,7 @@ def upload_sections():
     section_list = []
     if sections:
         for sec in sections:
-            section = {'id': sec.pk,
+            section = {'hcl_id': sec.pk,
                        'name': sec.name}
             section_list.append(section)
         response = cloud.send(endpoint='/api/device/register_new_section/',
@@ -160,7 +159,7 @@ def upload_rooms():
     room_list = []
     if rooms:
         for room in rooms:
-            r = {'id': room.pk,
+            r = {'hcl_id': room.pk,
                  'name': room.name,
                  'section': room.sectionID_id}
             room_list.append(r)
@@ -184,7 +183,18 @@ def upload_consumption():
 
             response = cloud.send(endpoint='/api/device/fibaro-consumption/',
                                   payload=data)
-            print(response)
+            if response==200:
+                for consumption in data:
+                    try:
+                        con = fibaro.models.Consumption.objects.get(**consumption)
+                        con.synced = True
+                        con.save()
+                    except Exception as e:
+                        print(e)
+                    else:            
+                        logging.info(
+                            "UPLOAD CONSUMPTIONS: Response from Cloud : {}".format(response))
+
 
 @app.task
 def download_update():
