@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3e215d3d-5949-442a-9ccb-504e0b88adc4" name="Default Changelist" comment="Added 2 more async tasks for Sections and Rooms">
+      <change beforePath="$PROJECT_DIR$/fibaro/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/fibaro/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fibaro/samples/devices/devices.json" beforeDir="false" afterPath="$PROJECT_DIR$/fibaro/samples/devices/devices.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fibaro/tests/tests_unit.py" beforeDir="false" afterPath="$PROJECT_DIR$/fibaro/tests/tests_unit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fibaro/validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/fibaro/validators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fibaro/ypostirizo.py" beforeDir="false" afterPath="$PROJECT_DIR$/fibaro/ypostirizo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler/Cloud/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler/Cloud/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler/Fibaro/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler/Fibaro/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler/celery.py" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler/celery.py" afterDir="false" />
+    </list>
+    <list id="9bf48a09-2e71-4c47-aa15-016080e6eeca" name="Refactored" comment="">
+      <change beforePath="$PROJECT_DIR$/fibaro/fibaro.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ypostirizoclient/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/ypostirizoclient/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ypostirizoclient/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ypostirizoclient/settings.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1j4xJsDjbQGlxBDzaAcAZMZdCqt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/fibaro/migrations" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/fibaro/migrations/0012_room_scene.py" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jedic\PycharmProjects\ypostirizoclient\fibaro\migrations" />
+      <recent name="C:\Users\jedic\PycharmProjects\ypostirizoclient\scheduler\RadarBase" />
+      <recent name="C:\Users\jedic\PycharmProjects\ypostirizoclient\scheduler\Cloud" />
+      <recent name="C:\Users\jedic\PycharmProjects\ypostirizoclient\scheduler\Fibaro" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Django tests.Test: fibaro.tests.tests_unit.EventBaseTestCase">
+    <configuration name="Test: fibaro.tests.tests_unit.EventBaseTestCase" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="ypostirizoclient" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="fibaro.tests.tests_unit.EventBaseTestCase" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: fibaro.tests.tests_unit.EventBaseTestCase.test_event_read_json" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="ypostirizoclient" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="fibaro.tests.tests_unit.EventBaseTestCase.test_event_read_json" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: fibaro.tests.tests_unit.YpostiriZOAdapterTestCase" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="ypostirizoclient" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="fibaro.tests.tests_unit.YpostiriZOAdapterTestCase" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: fibaro.tests.tests_unit.YpostiriZOAdapterTestCase.test_missing_data" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="ypostirizoclient" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="fibaro.tests.tests_unit.YpostiriZOAdapterTestCase.test_missing_data" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: fibaro.tests.tests_unit.YpostiriZOAdapterTestCase.test_valid_data" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="ypostirizoclient" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="fibaro.tests.tests_unit.YpostiriZOAdapterTestCase.test_valid_data" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ypostirizoclient" type="Python.DjangoServer" factoryName="Django server">
+      <module name="ypostirizoclient" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="ypostirizoclient.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: fibaro.tests.tests_unit.EventBaseTestCase" />
+        <item itemvalue="Django tests.Test: fibaro.tests.tests_unit.EventBaseTestCase.test_event_read_json" />
+        <item itemvalue="Django tests.Test: fibaro.tests.tests_unit.YpostiriZOAdapterTestCase.test_missing_data" />
+        <item itemvalue="Django tests.Test: fibaro.tests.tests_unit.YpostiriZOAdapterTestCase.test_valid_data" />
+        <item itemvalue="Django tests.Test: fibaro.tests.tests_unit.YpostiriZOAdapterTestCase" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e215d3d-5949-442a-9ccb-504e0b88adc4" name="Default Changelist" comment="" />
+      <changelist id="9bf48a09-2e71-4c47-aa15-016080e6eeca" name="Refactored" comment="" />
+      <created>1603077096697</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603077096697</updated>
+      <workItem from="1603077098036" duration="3077000" />
+      <workItem from="1603101895502" duration="418000" />
+      <workItem from="1603109562666" duration="3375000" />
+      <workItem from="1603174729177" duration="35575000" />
+      <workItem from="1603349607686" duration="36361000" />
+      <workItem from="1603879730541" duration="18267000" />
+      <workItem from="1603952173285" duration="26443000" />
+      <workItem from="1604132117992" duration="3407000" />
+      <workItem from="1604239679972" duration="3322000" />
+      <workItem from="1604302434349" duration="33842000" />
+      <workItem from="1604385483984" duration="26119000" />
+      <workItem from="1604477332931" duration="31048000" />
+      <workItem from="1604560595843" duration="15603000" />
+      <workItem from="1604603096672" duration="621000" />
+      <workItem from="1604648572727" duration="8567000" />
+      <workItem from="1604671010191" duration="2622000" />
+      <workItem from="1604906317723" duration="8537000" />
+      <workItem from="1605002116855" duration="4141000" />
+      <workItem from="1605025975452" duration="1261000" />
+      <workItem from="1605108528244" duration="2041000" />
+      <workItem from="1605164187994" duration="400000" />
+      <workItem from="1605179695045" duration="7189000" />
+      <workItem from="1605201047554" duration="1279000" />
+      <workItem from="1605251184738" duration="13000" />
+      <workItem from="1605285023205" duration="585000" />
+      <workItem from="1605604806975" duration="10455000" />
+      <workItem from="1605689034585" duration="6199000" />
+      <workItem from="1605695631302" duration="1217000" />
+      <workItem from="1605878613447" duration="11000" />
+      <workItem from="1606142384558" duration="3382000" />
+      <workItem from="1606203129926" duration="134000" />
+      <workItem from="1606216425570" duration="1112000" />
+      <workItem from="1606220975193" duration="30000" />
+      <workItem from="1606227744203" duration="2208000" />
+      <workItem from="1606234622138" duration="10755000" />
+      <workItem from="1606291920690" duration="5056000" />
+      <workItem from="1606310398721" duration="4539000" />
+      <workItem from="1606387893852" duration="4263000" />
+      <workItem from="1606812646831" duration="61000" />
+    </task>
+    <task id="LOCAL-00001" summary="refactored both methods">
+      <created>1604342855752</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604342855752</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Creation of models.py file. Device and EventBase models were created as well. Both are based on the ones found on validators.py file.">
+      <created>1604342961556</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604342961556</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Refactored Cloud's send method in order to reach the endpoint set on ypostirizo Cloud.">
+      <created>1604343111523</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604343111523</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Scheduler app designed to shedule all tasks that will run async.">
+      <created>1604343147680</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604343147680</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ignore local config.py and settings.py">
+      <created>1604343292189</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604343292189</updated>
+    </task>
+    <task id="LOCAL-00006" summary="led to 30 minutes timeout because of too many failed login attempts.">
+      <created>1604345206218</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1604345206218</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Refactored get method, removed push method">
+      <created>1604398903767</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1604398903767</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Refactored Property_Name field and Value field.">
+      <created>1604398973142</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604398973142</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Refactored">
+      <created>1604399005059</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1604399005059</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Refactoring">
+      <created>1604399082143</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1604399082143</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Refactored">
+      <created>1604560823836</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1604560823836</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Refactored">
+      <created>1604560903201</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1604560903201</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Parent_id should have a recursive foreign key.">
+      <created>1604562822611</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1604562822611</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Removed Ypostirizo class (YpostiriZO adapter to push data to the cloud.&#10;    initial_data: dict | EventBase Instance)">
+      <created>1604562884403</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1604562884403</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Changed schedule times">
+      <created>1604562988409</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1604562988409</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Scheduling is set with global variables.">
+      <created>1604671650067</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1604671650067</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added basic documentation">
+      <created>1604671839281</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1604671839281</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added basic documentation">
+      <created>1604672026821</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1604672026821</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Refactored">
+      <created>1604672080742</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1604672080742</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Refactored">
+      <created>1604672286598</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1604672286598</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Refactored and added Room and Section models">
+      <created>1605003512460</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1605003512460</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Refactored and added async tasks to fetch Sections and Rooms.">
+      <created>1605003579912</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1605003579912</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Added 2 more async tasks for Sections and Rooms">
+      <created>1605003606215</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1605003606215</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactored both methods" />
+    <MESSAGE value="Creation of models.py file. Device and EventBase models were created as well. Both are based on the ones found on validators.py file." />
+    <MESSAGE value="Refactored Cloud's send method in order to reach the endpoint set on ypostirizo Cloud." />
+    <MESSAGE value="Scheduler app designed to shedule all tasks that will run async." />
+    <MESSAGE value="ignore local config.py and settings.py" />
+    <MESSAGE value="led to 30 minutes timeout because of too many failed login attempts." />
+    <MESSAGE value="Refactored get method, removed push method" />
+    <MESSAGE value="Refactored Property_Name field and Value field." />
+    <MESSAGE value="Refactoring" />
+    <MESSAGE value="Parent_id should have a recursive foreign key." />
+    <MESSAGE value="Removed Ypostirizo class (YpostiriZO adapter to push data to the cloud.&#10;    initial_data: dict | EventBase Instance)" />
+    <MESSAGE value="Changed schedule times" />
+    <MESSAGE value="Scheduling is set with global variables." />
+    <MESSAGE value="Added basic documentation" />
+    <MESSAGE value="Refactored" />
+    <MESSAGE value="Refactored and added Room and Section models" />
+    <MESSAGE value="Refactored and added async tasks to fetch Sections and Rooms." />
+    <MESSAGE value="Added 2 more async tasks for Sections and Rooms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added 2 more async tasks for Sections and Rooms" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="252" y="178" key="#Inspections" timestamp="1605012792102">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="252" y="178" key="#Inspections/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605012792102" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603077803388">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1603077803388" />
+    <state x="716" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605285058991">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="716" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605285058991" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604574077428">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1604574077428" />
+    <state x="212" y="129" key="#ypostirizoclient" timestamp="1603077807464">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="212" y="129" key="#ypostirizoclient/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1603077807464" />
+    <state x="389" y="39" width="1406" height="961" key="CommitChangelistDialog2" timestamp="1606234649886">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="389" y="39" width="1406" height="961" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1606234649886" />
+    <state x="184" y="86" width="1536" height="861" key="DiffContextDialog" timestamp="1604913567418">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" width="1536" height="861" key="DiffContextDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1604913567418" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1605193334736">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605193334736" />
+    <state width="1072" height="343" key="GridCell.Tab.0.bottom" timestamp="1605695280465">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1072" height="343" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605695280465" />
+    <state width="1072" height="343" key="GridCell.Tab.0.center" timestamp="1605695280465">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1072" height="343" key="GridCell.Tab.0.center/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605695280465" />
+    <state width="1072" height="343" key="GridCell.Tab.0.left" timestamp="1605695280465">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1072" height="343" key="GridCell.Tab.0.left/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605695280465" />
+    <state width="1072" height="343" key="GridCell.Tab.0.right" timestamp="1605695280465">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1072" height="343" key="GridCell.Tab.0.right/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605695280465" />
+    <state width="1072" height="343" key="GridCell.Tab.1.bottom" timestamp="1605695280465">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1072" height="343" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605695280465" />
+    <state width="1072" height="343" key="GridCell.Tab.1.center" timestamp="1605695280465">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1072" height="343" key="GridCell.Tab.1.center/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605695280465" />
+    <state width="1072" height="343" key="GridCell.Tab.1.left" timestamp="1605695280465">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1072" height="343" key="GridCell.Tab.1.left/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605695280465" />
+    <state width="1072" height="343" key="GridCell.Tab.1.right" timestamp="1605695280465">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1072" height="343" key="GridCell.Tab.1.right/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605695280465" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1603078308005">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1603078308005" />
+    <state x="653" y="213" key="RollbackChangesDialog" timestamp="1604345131653">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-845" y="202" key="RollbackChangesDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1603204403503" />
+    <state x="653" y="213" key="RollbackChangesDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1604345131653" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1604344039586">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1604344039586" />
+    <state x="807" y="435" key="VCS.ChangelistChooser" timestamp="1604672196421">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="807" y="435" key="VCS.ChangelistChooser/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1604672196421" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1605003608544">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605003608544" />
+    <state x="-843" y="325" key="com.intellij.ide.util.TipDialog" timestamp="1606812647578">
+      <screen x="-1280" y="0" width="1280" height="984" />
+    </state>
+    <state x="-843" y="325" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1606812647578" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1606203237565" />
+    <state x="1088" y="10" width="849" height="1019" key="dock-window-1" timestamp="1605695673372">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1088" y="10" width="849" height="1019" key="dock-window-1/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605695673372" />
+    <state x="1165" y="258" width="607" height="536" key="find.popup" timestamp="1604494877787">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1165" y="258" width="607" height="536" key="find.popup/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1604494877787" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1605608683390">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-865" y="213" width="672" height="642" key="search.everywhere.popup/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605164230634" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605608683390" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ypostirizoclient$Test__fibaro_tests_tests_unit_YpostiriZOAdapterTestCase_test_valid_data.coverage" NAME="Test: fibaro.tests.tests_unit.YpostiriZOAdapterTestCase.test_valid_data Coverage Results" MODIFIED="1604653219204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ypostirizoclient$Test__fibaro_tests_test_devices_FibaroDevicesTestCase.coverage" NAME="Test: fibaro.tests.test_devices.FibaroDevicesTestCase Coverage Results" MODIFIED="1604648612614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ypostirizoclient$Test__fibaro_tests_tests_unit_FibaroDataTestCase.coverage" NAME="Test: fibaro.tests.tests_unit.FibaroDataTestCase Coverage Results" MODIFIED="1604648700837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ypostirizoclient$Test__fibaro_tests_tests_unit_FibaroDataTestCase_test_temp_event.coverage" NAME="Test: fibaro.tests.tests_unit.FibaroDataTestCase.test_temp_event Coverage Results" MODIFIED="1603911881106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ypostirizoclient$Test__fibaro_tests_tests_unit_YpostiriZOAdapterTestCase.coverage" NAME="Test: fibaro.tests.tests_unit.YpostiriZOAdapterTestCase Coverage Results" MODIFIED="1604648722167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ypostirizoclient$Test__fibaro_tests_tests_unit_YpostiriZOAdapterTestCase_test_missing_data.coverage" NAME="Test: fibaro.tests.tests_unit.YpostiriZOAdapterTestCase.test_missing_data Coverage Results" MODIFIED="1604654269360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ypostirizoclient$Test__fibaro_tests_tests_unit_EventBaseTestCase_test_event_read_json.coverage" NAME="Test: fibaro.tests.tests_unit.EventBaseTestCase.test_event_read_json Coverage Results" MODIFIED="1605610025319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ypostirizoclient$Test__fibaro_tests_test_devices_FibaroDevicesTestCase_test_door_sensor.coverage" NAME="Test: fibaro.tests.test_devices.FibaroDevicesTestCase.test_door_sensor Coverage Results" MODIFIED="1604480800824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ypostirizoclient$Test__fibaro_tests_tests_unit_EventBaseTestCase.coverage" NAME="Test: fibaro.tests.tests_unit.EventBaseTestCase Coverage Results" MODIFIED="1605690315320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>

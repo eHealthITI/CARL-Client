@@ -105,3 +105,31 @@ def get_rooms():
             if new is not None:
                 room.read_json(new)
                 room.save()
+                
+@app.task
+def get_consumption():
+    
+    devices = fibaro.models.Device.objects.filter(type='com.fibaro.FGWP102')
+    home_center_adapter = HomeCenterAdapter()
+    
+    for device in devices:    
+        last_consumption = fibaro.models.Consumption.objects.filter(device=device).order_by('timestamp').last()
+        if last_consumption:
+            last_timestamp = last_consumption.timestamp
+        else:
+            last_timestamp = 1622537945
+        
+        endpoint = f'/api/energy/{last_timestamp}/now/summary-graph/devices/power/{device.id}'
+        
+        consumption_metrics = home_center_adapter.get(endpoint=endpoint,
+                                                    method='GET')
+        print(f'Device: {device.id} returned {consumption_metrics} from: {last_timestamp}')
+        cons_json = consumption_metrics.content.decode('utf8').replace("'", '"')
+        data_json = json.loads(cons_json)
+        for consumption in data_json:
+            kwargs = {'timestamp':consumption[0],
+                    'watt':consumption[1],
+                    'device': device}
+            
+            fibaro.models.Consumption.objects.get_or_create(**kwargs)    
+        
