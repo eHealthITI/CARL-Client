@@ -100,7 +100,7 @@ def upload_events():
     if latest_events:
         # Split the event list to chunks of 1000 length
         latest_events = [latest_events[x:x+1000] for x in range(0, len(latest_events), 1000)]
-        for chunk in latest_events:
+        for chunk in latest_events[:5]:
             event_list = []
             for ev in chunk:
                 if fibaro.models.Device.objects.get(pk=ev.deviceID_id).type not in settings.IGNORED_DEVICES:
@@ -116,7 +116,7 @@ def upload_events():
         if response==200:
             for ev in event_list:
                 try:
-                    e = fibaro.models.EventBase.objects.get(pk=ev['hcl_id'])
+                    e = fibaro.models.EventBase.objects.get(id=ev['hcl_id'])
                     e.synced=True
                     e.save()
                 except Exception as e:
@@ -174,7 +174,7 @@ def upload_consumption():
     data = []
     if latest_consumptions:
         latest_consumptions = [latest_consumptions[x:x+1000] for x in range(0, len(latest_consumptions), 1000)]       
-        for chunk in latest_consumptions:
+        for chunk in latest_consumptions[:5]:
             consumption_list = []
             for consumption in chunk:
                 cons = {'device': consumption.device.id, 'timestamp': consumption.timestamp,
