@@ -59,9 +59,10 @@ with zipfile.ZipFile('/home/pi/carlpi/latest.zip', 'r') as zip_ref:
 
 # In[ ]:
 
+os.system("sudo rm libseccomp2_2.5.1-1_armhf*")
 
 os.system("sudo shutdown -r now")
-os.system("chmod +x custom_update.py get_ip.sh")
+
 
 
 # In[ ]:
