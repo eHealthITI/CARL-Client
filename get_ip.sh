@@ -15,6 +15,8 @@ apt --assume-yes remove python-configparser
 sudo pip3 -v install docker-compose
 # Installs notify-tools
 sudo pip3 -v install python-dotenv
+sudo wget http://ftp.us.debian.org/debian/pool/main/libs/libseccomp/libseccomp2_2.5.1-1_armhf.deb
+sudo sudo dpkg -i libseccomp2_2.5.1-1_armhf.deb
 
 
 echo "installed docker"

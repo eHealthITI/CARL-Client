@@ -59,11 +59,10 @@ with zipfile.ZipFile('/home/pi/carlpi/latest.zip', 'r') as zip_ref:
 
 # In[ ]:
 
+os.system("sudo rm libseccomp2_2.5.1-1_armhf*")
 
 os.system("sudo shutdown -r now")
-os.system("chmod +x custom_update.py get_ip.sh")
-os.system("wget http://ftp.us.debian.org/debian/pool/main/libs/libseccomp/libseccomp2_2.5.1-1_armhf.deb")
-os.system("sudo dpkg -i libseccomp2_2.5.1-1_armhf.deb")
+
 
 
 # In[ ]:
