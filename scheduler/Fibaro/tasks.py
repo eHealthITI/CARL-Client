@@ -154,5 +154,5 @@ def get_consumption():
                 
                       
             fibaro.models.Consumption.objects.get_or_create(**kwargs) 
-            logging.debug(f' Consumption Object #######: \n {r.__dict__} ')   
+            logging.debug(f' Consumption Object #######: \n {kwargs} ')   
     logging.debug(f'______________________________________________ ')       
