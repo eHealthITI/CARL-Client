@@ -33,7 +33,10 @@ def get_sensor_data():
                 sensor = fibaro.models.Device()
                 sensor.read_json(device)
                 sensor.save()
-
+                logging.debug(f'_________________GET SENSOR DATA _____________ ')
+                logging.debug(f' Device JSON #######: \n{device} ')
+                logging.debug(f' Device Object #######: \n {sensor.__dict__} ')
+                logging.debug(f'______________________________________________ ')
             # TODO Probably should remove this exception
             except ObjectDoesNotExist:
                 logging.info('the roomId is : {}'.format(device.get('roomID')))
@@ -67,6 +70,10 @@ def get_events():
                 event = fibaro.models.EventBase()
                 event.read_json(new)
                 event.save()
+                logging.debug(f'_________________GET EVENTS _____________ ')
+                logging.debug(f' Event JSON #######: \n{new} ')
+                logging.debug(f' Event Object #######: \n {event.__dict__} ')
+                logging.debug(f'______________________________________________ ')
 
 
 @app.task
@@ -76,6 +83,7 @@ def get_sections():
     the Scenes that were registered on the Home Center Lite via
     the hub's API endpoint.
     """
+    logging.debug(f'_________________GET SECTIONS _____________ ')
     home_center_adapter = HomeCenterAdapter()
 
     new_sections = home_center_adapter.get(endpoint='/api/sections',
@@ -87,6 +95,10 @@ def get_sections():
                 section.read_json(new)
                 section.save()
 
+                logging.debug(f' Section JSON #######: \n{new} ')
+                logging.debug(f' Section Object #######: \n {section.__dict__} ')
+    logging.debug(f'______________________________________________ ')
+
 
 @app.task
 def get_rooms():
@@ -95,6 +107,7 @@ def get_rooms():
     the Rooms that were registered on the Home Center Lite via
     the hub's API endpoint.
     """
+    logging.debug(f'_________________GET ROOMS _____________ ')
     home_center_adapter = HomeCenterAdapter()
 
     new_rooms = home_center_adapter.get(endpoint='/api/rooms',
@@ -105,10 +118,14 @@ def get_rooms():
             if new is not None:
                 room.read_json(new)
                 room.save()
+
+                logging.debug(f' Room JSON #######: \n{new} ')
+                logging.debug(f' Room Object #######: \n {room.__dict__} ')
+    logging.debug(f'______________________________________________ ')
                 
 @app.task
 def get_consumption():
-    
+    logging.debug(f'_________________GET CONSUMPTIONS _____________ ')
     devices = fibaro.models.Device.objects.filter(type='com.fibaro.FGWP102')
     home_center_adapter = HomeCenterAdapter()
     
@@ -118,18 +135,24 @@ def get_consumption():
             last_timestamp = last_consumption.timestamp
         else:
             last_timestamp = 1622537945
+        logging.debug(f' last timestmamp #######: \n{last_timestamp} ')
         
         endpoint = f'/api/energy/{last_timestamp}/now/summary-graph/devices/power/{device.id}'
         
         consumption_metrics = home_center_adapter.get(endpoint=endpoint,
                                                     method='GET')
-        print(f'Device: {device.id} returned {consumption_metrics} from: {last_timestamp}')
+        logging.debug(f' consumption_metrics raw #######: \n{consumption_metrics} ')
+        
         cons_json = consumption_metrics.content.decode('utf8').replace("'", '"')
+        logging.debug(f' consumption_metrics JSON #######: \n{consumption_metrics} ')
         data_json = json.loads(cons_json)
         for consumption in data_json:
             kwargs = {'timestamp':consumption[0],
                     'watt':consumption[1],
                     'device': device}
-            
-            fibaro.models.Consumption.objects.get_or_create(**kwargs)    
-        
+            logging.debug(f' Consumption JSON #######: \n{consumption} ')
+                
+                      
+            fibaro.models.Consumption.objects.get_or_create(**kwargs) 
+            logging.debug(f' Consumption Object #######: \n {r.__dict__} ')   
+    logging.debug(f'______________________________________________ ')       
