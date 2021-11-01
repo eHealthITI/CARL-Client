@@ -51,11 +51,13 @@ except Exception as e:
 
 
 # unzips it
-directory_to_extract_to = '/home/pi/carlpi/'
-filename = ''
-with zipfile.ZipFile('/home/pi/carlpi/latest.zip', 'r') as zip_ref:
-    zip_ref.extractall(directory_to_extract_to)
-
+try:
+	directory_to_extract_to = '/home/pi/carlpi/'
+	filename = ''
+	with zipfile.ZipFile('/home/pi/carlpi/latest.zip', 'r') as zip_ref:
+    		zip_ref.extractall(directory_to_extract_to)
+except Exception as e:
+	print(e)
 
 # In[ ]:
 
