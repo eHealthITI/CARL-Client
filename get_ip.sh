@@ -62,8 +62,10 @@ docker-compose -f /home/pi/carlpi/docker-compose.yml up -d --build
 #remove latest.zip
 rm -r /home/pi/carlpi/latest.zip
 echo "built!"
+
 # Moves the output to a dummy file. This is done so the that the next command works
 exec 1>/home/pi/carlpi/deploy_dump.txt 2>&1
 
 ## Sending Deploy Logs.
 curl -s -o /dev/null -X POST -H "Authorization: Token $cloud_token" -H "Content-Type:multipart/form-data" -F "log=@/home/pi/carlpi/deploy_log.txt" $cloud_url/api/device/log/deploy
+
