@@ -39,8 +39,33 @@ crontab -l -u pi | { cat; echo "0 7 * * * /usr/bin/python3 /home/pi/carlpi/custo
 crontab -l -u pi | { cat; echo "@reboot /home/pi/carlpi/get_ip.sh"; } | crontab -u pi -
 echo "set up finished"
 
+cloud_token=$(cat /home/pi/carlpi/.env | awk -F= '/^CLOUD_TOKEN/ {print $2}')
+cloud_url=$(cat /home/pi/carlpi/.env | awk -F= '/^CLOUD_URL/ {print $2}')
+
+
+#### Sending logs ####
+
+## Gets celery logs that is stored in the container
+docker cp carlpi_celery_1:/code/celery.logs /home/pi/carlpi/celery.logs
+
+## Delete the celery logs insided the container to minimize the size 
+docker exec carlpi_celery_1 sh -c "rm -r /code/celery.logs"
+
+## Sending celery logs to cloud
+curl -s -o /dev/null -X POST -H "Authorization: Token $cloud_token" -H "Content-Type:multipart/form-data" -F "log=@/home/pi/carlpi/celery.logs" $cloud_url/api/device/log/celery
+
+# Sending update logs 
+curl -s -o /dev/null -X POST -H "Authorization: Token $cloud_token" -H "Content-Type:multipart/form-data" -F "log=@/home/pi/carlpi/update_log.txt" $cloud_url/api/device/log/update
+
 docker-compose -f /home/pi/carlpi/docker-compose.yml up -d --build
 
 #remove latest.zip
 rm -r /home/pi/carlpi/latest.zip
 echo "built!"
+
+# Moves the output to a dummy file. This is done so the that the next command works
+exec 1>/home/pi/carlpi/deploy_dump.txt 2>&1
+
+## Sending Deploy Logs.
+curl -s -o /dev/null -X POST -H "Authorization: Token $cloud_token" -H "Content-Type:multipart/form-data" -F "log=@/home/pi/carlpi/deploy_log.txt" $cloud_url/api/device/log/deploy
+
