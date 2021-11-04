@@ -30,7 +30,7 @@ services:
     - backend
   celery:
     build: .
-    command: bash -c "celery -A scheduler worker -l info"
+    command: bash -c "celery -A scheduler worker -l info -f celery.logs"
     depends_on: 
       - db
       - beat
