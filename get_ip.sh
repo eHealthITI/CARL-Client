@@ -36,7 +36,7 @@ echo "filled .env file"
 # Creates a crontab job to run update.sh script on a daily basis at 7:00AM
 crontab -r -u pi
 crontab -l -u pi | { cat; echo "0 7 * * * /usr/bin/python3 /home/pi/carlpi/custom_update.py >> /home/pi/carlpi/update_log.txt 2>&1"; } | crontab -u pi -
-crontab -l -u pi | { cat; echo "@reboot /home/pi/carlpi/deploy.sh"; } | crontab -u pi -
+crontab -l -u pi | { cat; echo "@reboot /home/pi/carlpi/get_ip.sh"; } | crontab -u pi -
 echo "set up finished"
 
 docker-compose -f /home/pi/carlpi/docker-compose.yml up -d --build
@@ -44,5 +44,3 @@ docker-compose -f /home/pi/carlpi/docker-compose.yml up -d --build
 #remove latest.zip
 rm -r /home/pi/carlpi/latest.zip
 echo "built!"
-exec 1>/home/pi/carlpi/deploy_dump.txt 2>&1
-
