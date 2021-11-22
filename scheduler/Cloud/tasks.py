@@ -99,7 +99,7 @@ def upload_events():
     
     if latest_events:
         # Split the event list to chunks of 1000 length
-        latest_events = [latest_events[x:x+1000] for x in range(0, len(latest_events), 1000)]
+        latest_events = [latest_events[x:x+200] for x in range(0, len(latest_events), 200)]
         for chunk in latest_events[:5]:
             event_list = []
             for ev in chunk:
@@ -173,7 +173,7 @@ def upload_consumption():
     latest_consumptions = fibaro.models.Consumption.objects.filter(synced=False).order_by('pk')
     data = []
     if latest_consumptions:
-        latest_consumptions = [latest_consumptions[x:x+1000] for x in range(0, len(latest_consumptions), 1000)]       
+        latest_consumptions = [latest_consumptions[x:x+200] for x in range(0, len(latest_consumptions), 200)]       
         for chunk in latest_consumptions[:5]:
             consumption_list = []
             for consumption in chunk:
