@@ -27,28 +27,6 @@ In order to ensure that all services are up and running, run the following comma
 
     docker-compose ps 
 
-### Raspberry Pi Deployment:
-Please follow the instructions that are stored in our [drive folder](https://drive.google.com/file/d/1Oa1b17_mm-Cu4IUf69huRXqgNc00fgID/view?usp=sharing) 
-
-### Key Differences between the two options:
-It RPi deployment follows the same principles as docker deployment but some things were automated to make it user friendly.
-This is achieved with 2 bash scripts:
-* `get_ip.sh`
-    - installs nmap
-    - install docker and docker-compose
-    - finds the IP gateway of the router
-    - uses router's IP gateway and nmap to find HC lite's IP
-    - appends the IP in the .env file 
-    - sets a crontab job to run update.sh on a daily basis at 07:00AM
-    - builds and deploys with docker-compose CARL Rpi Client
-
-    This script is configured with rc.local(you may find this file in /etc/rc.local) and runs on boot up. This is helpfull in a scenario where there is a power outage in a remote testing home. The supervisor will not have to reconfigure the connection between the Client and the HCL.
-* `update.sh`
-    - downloads the latest release that is available on CARL Cloud
-    - unzips and build latest release
-
-    This is configured on `get_ip.sh` to run on a daily basis. 
-
 ## Apps:
 ![workflow](https://github.com/eHealthITI/ypostirizoclient/blob/master_test/img/workflow.png)
 ### Fibaro: 
@@ -68,13 +46,8 @@ This app is consists of the following files:
 ### Scheduler:
 Scheduler is responsible for scheduling and executing the get and post requests between HCL and Cloud APIs respectively. It is consisted of 3 modules one for each platform. Each module has tasks.py file that has all the necessary tasks. 
 
-NOTE:  RadarBase has not been implemented yet.
 
-* [Cloud](https://github.com/eHealthITI/ypostirizoclient/tree/master/scheduler/Cloud): Sends Section, Room, Device and Event objects to Cloud.
-    - [tasks.py](https://github.com/eHealthITI/ypostirizoclient/blob/master/scheduler/Cloud/tasks.py)
 * [Fibaro](https://github.com/eHealthITI/ypostirizoclient/tree/master/scheduler/Fibaro): Fetches the data from HCL via its API.
     - [tasks.py](https://github.com/eHealthITI/ypostirizoclient/blob/master/scheduler/Fibaro/tasks.py)
-* [RadarBase]
-    - tasks.py
 * [celery.py](https://github.com/eHealthITI/ypostirizoclient/blob/master/scheduler/celery.py): Scheduling configuration where we determine the frequency with which each task is run.
 * [celeryconfig.py](https://github.com/eHealthITI/ypostirizoclient/blob/master/scheduler/celeryconfig.py): This is used as a configuration file for celery. 
